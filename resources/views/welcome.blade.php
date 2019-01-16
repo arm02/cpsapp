@@ -52,7 +52,7 @@ form > input { margin-right: 15px; }
                 document.getElementById('results').innerHTML = 
                     '<form  method="post" enctype="multipart/form-data" action="{{url('absensi/save')}}"> '+
                     '@csrf'+
-                    '<input class="form-control" placeholder="Masukan Nama Anda " name="nama" type="text">'+
+                    '<input class="form-control" placeholder="Masukan Nama Anda " name="nama" type="text" required>'+
                     '<img style="display: none;" src="'+data_uri+'"/>'+
                     '<input type="hidden" name="gambar" value="'+data_uri+'">' +
                     '<br><button onClick="konfirmasiDulu()" class="btn btn-primary" type="submit">Absen Untuk Hari Ini</button>'+
