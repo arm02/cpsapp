@@ -15,7 +15,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -39,9 +38,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
                             </li>
@@ -52,7 +48,7 @@
                                 <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/cekabsensi') }}">Laporan Absensi</a>
+                                <a class="nav-link" href="{{ url('cekabsensi') }}">Laporan Absensi</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -71,7 +67,6 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
                     </ul>
                 </div>
             </div>
@@ -86,6 +81,7 @@
     <script>
         CKEDITOR.replace( 'ckeditor' );
     </script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 </html>
