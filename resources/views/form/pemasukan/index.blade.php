@@ -31,12 +31,10 @@ Pemasukan
               <td>{{$q->tanggal}}</td>
               <td>{!!$q->rincian!!}</td>
               <td>
-                <a href="{{url('form/pemasukan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm">
-                 Edit
+                <a href="{{url('form/pemasukan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-edit"></i>                
                 </a>
                  <a href="{{url('form/pemasukan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
-                 class="btn btn-outline-danger btn-sm">
-                   Delete
+                 class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i>
                  </a>
               </td>
             </tr>
@@ -45,11 +43,16 @@ Pemasukan
         </table>
         </div>
         <hr>
-          <a href="{{url('/form/pemasukan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square">Add</i></a>
-          <a href="{{ url('/form/pemasukan/pdf')}}">
-              <button class="btn btn-success">Download PDF</button></a>
+          <a href="{{url('/form/pemasukan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
+
+          
+          <div style="float:right; ">
+            <a href="{{ url('/form/pemasukan/pdf')}}">
+              <button class="btn btn-outline-primary">Download PDF</button></a>
               
-            <a href="{{ url('/form/pemasukan/downloadExcel/xlsx') }}"><button class="btn btn-success">Download Excel</button></a>
+            <a href="{{ url('/form/pemasukan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+          </div>
+
       </div>
     </div>
 @endsection

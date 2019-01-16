@@ -28,6 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+<<<<<<< HEAD
     public function isAdmin()
     {
         if ($this->role == 1 && $this->status == 1) return true;
@@ -43,4 +44,6 @@ class User extends Authenticatable
         if ($this->role == 3 && $this->status == 1) return true;
         return false;
     }
+=======
+>>>>>>> a6960a08eb5aa69fb9a8a4ed72dbc9548869671b
 }
