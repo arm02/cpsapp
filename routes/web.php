@@ -58,3 +58,11 @@ Route::get('form/cekabsensi', 'CekAbsensiController@index');
 Route::get('cekabsensi/add', 'CekAbsensiController@add');
 Route::post('cekabsensi/save', 'CekAbsensiController@save');
 Route::get('form/cekabsensi/delete/{id}', 'CekAbsensiController@delete');
+
+Route::get('form/karyawan', 'KaryawanController@index')->name('add');
+Route::get('form/karyawan/add', 'KaryawanController@add')->name('add');
+Route::post('form/karyawan/save', 'KaryawanController@save')->name('save');
+Route::get('form/karyawan/edit/{id}', 'KaryawanController@edit')->name('edit');
+Route::post('form/karyawan/update', 'KaryawanController@update')->name('update');
+Route::get('form/karyawan/delete/{id}', 'KaryawanController@delete')->name('delete');
+
