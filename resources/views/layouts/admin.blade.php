@@ -38,9 +38,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
                             </li>
@@ -70,7 +67,6 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
                     </ul>
                 </div>
             </div>
@@ -85,6 +81,7 @@
     <script>
         CKEDITOR.replace( 'ckeditor' );
     </script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 </html>
