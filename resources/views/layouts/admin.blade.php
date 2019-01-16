@@ -38,50 +38,49 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('cekabsensi') }}">Laporan Absensi</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('cekabsensi') }}">Laporan Absensi</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                    </ul>
-                </div>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'ckeditor' );
-    </script>
-    <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset ('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+<script>
+    CKEDITOR.replace( 'ckeditor' );
+</script>
 
 </body>
 </html>
