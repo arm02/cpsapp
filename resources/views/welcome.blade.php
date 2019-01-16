@@ -15,6 +15,9 @@ form > input { margin-right: 15px; }
         Mesin Absensi Online
     </div>
     <div class="card-body">
+        <div class="text-center">
+            <img src="./gambar/capstone.jpeg" class="rounded" alt="..." style="width: 400px;height: 400px;">
+        </div>
     
     <div id="my_camera" style="display: none;"></div>
     <script type="text/javascript" src="../webcam.min.js"></script>
@@ -78,7 +81,7 @@ form > input { margin-right: 15px; }
 
     </div>
     <div class="card-footer text-muted">
-        Casptone Indonesia
+        Copyright ©2019 Casptone Indonesia
     </div>
 </div>
 </div>
