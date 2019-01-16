@@ -15,6 +15,11 @@ use Expection;
 
 class LaporanKeuanganController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function indexpemasukan()
     {
     	return view('form.pemasukan.index');

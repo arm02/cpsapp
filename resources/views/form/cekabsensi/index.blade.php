@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title')
 Cek Absensi
 @endsection
@@ -26,7 +26,7 @@ Cek Absensi
               <td>#</td>
               <td>
                  <a href="#" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
-                 class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i>Hapus</a>
+                 class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i>Delete</a>
               </td>
             </tr>
 

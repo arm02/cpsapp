@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title')
 Pemasukan
 @endsection
@@ -32,11 +32,11 @@ Pemasukan
               <td>{!!$q->rincian!!}</td>
               <td>
                 <a href="{{url('form/pemasukan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm">
-                  <i class="fa fa-edit"></i>
+                 Edit
                 </a>
                  <a href="{{url('form/pemasukan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm">
-                   <i class="fa fa-trash"></i>
+                   Delete
                  </a>
               </td>
             </tr>
