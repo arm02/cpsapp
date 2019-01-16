@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::post('/absensi/save', 'WebcamController@save');
+Route::post('/webcam/save', 'WebcamController@save');
+Route::get('/webcam/', 'WebcamController@index');
 
 Auth::routes();
 
