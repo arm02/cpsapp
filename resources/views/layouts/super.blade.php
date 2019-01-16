@@ -44,21 +44,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('cekabsensi') }}">Laporan Absensi</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/dataadmin') }}">Data Admin</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/dataoperator') }}">Data Operator</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/datasuper') }}">Data Supervisor</a>
-                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

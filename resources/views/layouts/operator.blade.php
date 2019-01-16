@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Admin Capstone Indonesia
+                    Operator Capstone Indonesia
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -39,25 +39,10 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('cekabsensi') }}">Laporan Absensi</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/dataadmin') }}">Data Admin</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/dataoperator') }}">Data Operator</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/datasuper') }}">Data Supervisor</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
