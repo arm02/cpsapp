@@ -15,7 +15,7 @@ Add Upload File
     <input type="file" class="form-control" name="file" id="inputEmail4" placeholder="File">
   <br>
   <hr>
-  <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-plus-circle"></i>Add</button>
+  <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-plus-circle"></i></button>
   @csrf
 </form>
     </div>

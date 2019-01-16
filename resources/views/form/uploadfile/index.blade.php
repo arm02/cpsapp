@@ -28,14 +28,14 @@ Upload File
               <td>{{$q->file}}</td>
               <td>
                 <a href="{{url('form/uploadfile/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm">
-                  <i class="fa fa-edit">Edit</i>
+                  <i class="fa fa-edit"></i>
                 </a>
                  <a href="{{url('form/uploadfile/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm">
-                   <i class="fa fa-trash">Hapus</i>
+                   <i class="fa fa-trash"></i>
                  </a>
                  <a href="{{url('form/uploadfile/download/'.$q->file)}}" class="btn btn-outline-success btn-sm">
-                  <i class="fa fa-download">Unduh</i>
+                  <i class="fa fa-download"></i>
                 </a>
               </td>
             </tr>
@@ -44,11 +44,14 @@ Upload File
         </table>
         </div>
         <hr>
-        <a href="{{url('form/uploadfile/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square">Add</i></a>
-          <a href="{{ url('/form/uploadfile/pdf')}}">
-              <button class="btn btn-success">Download PDF</button></a>
+        <a href="{{url('form/uploadfile/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
+
+          <div style="float: right;">
+            <a href="{{ url('/form/uploadfile/pdf')}}">
+              <button class="btn btn-outline-primary">Download PDF</button></a>
               
-            <a href="{{ url('/form/uploadfile/downloadExcel/xlsx') }}"><button class="btn btn-success">Download Excel</button></a>
+            <a href="{{ url('/form/uploadfile/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+          </div>
       </div>
     </div>
 @endsection

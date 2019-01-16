@@ -16,8 +16,6 @@ Route::get('/', function () {
 });
 
 Route::post('/absensi/save', 'WebcamController@save');
-Route::post('/webcam/save', 'WebcamController@save');
-Route::get('/webcam/', 'WebcamController@index');
 
 Auth::routes();
 
@@ -54,4 +52,9 @@ Route::get('form/uploadfile/downloadExcel/{type}','UploadFileController@download
 Route::get('cekabsensi', 'UploadFileController@index')->name('adduploadfile');
 Route::get('cekabsensi/add', 'UploadFileController@add')->name('adduploadfile');
 Route::post('cekabsensi/save', 'UploadFileController@save')->name('saveuploadfile');
-Route::get('cekabsensi/delete/{id}', 'UploadFileController@delete')->name('deleteuploadfile');
+Route::get('cekabsensi/delete/{id}', 'UploadFileController@delete')->name('updateuploadfile');
+
+Route::get('form/cekabsensi', 'CekAbsensiController@index');
+Route::get('cekabsensi/add', 'CekAbsensiController@add');
+Route::post('cekabsensi/save', 'CekAbsensiController@save');
+Route::get('form/cekabsensi/delete/{id}', 'CekAbsensiController@delete');

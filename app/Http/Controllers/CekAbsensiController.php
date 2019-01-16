@@ -15,13 +15,13 @@ class CekAbsensiController extends Controller
     
     public function index()
     {
-    	return view('cekabsensi.index');
+        return view('form.cekabsensi.index');
     }
 
     public function delete($id)
     {
-    	$c = CekAbsensi::find($id);
-    	$c->delete();
-    	return redirect(url('CekAbsensi'));
+        $c = CekAbsensi::find($id);
+        $c->delete();
+        return redirect(url('form/cekabsensi'));
     }
 }
