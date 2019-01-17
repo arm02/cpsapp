@@ -40,19 +40,19 @@
                     @if(Auth::user()->role == 1)
                     <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/form/pemasukan') }}">Laporan Pemasukan</a>
+                                <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/form/pengeluaran') }}">Laporan Pengeluaran</a>
+                                <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/form/uploadfile') }}">Laporan File</a>
+                                <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/cekabsensi') }}">Laporan Absensi</a>
+                                <a class="nav-link" href="{{ url('cekabsensi') }}">Laporan Absensi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/form/karyawan') }}">Karyawan</a>
+                                <a class="nav-link" href="{{ url('form/karyawan') }}">Karyawan</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('admin/form/visimisi') }}">Visi Misi</a>
@@ -63,9 +63,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('admin/dataadmin') }}">Data Admin</a>
-                                    <a class="dropdown-item" href="{{ url('admin/dataoperator') }}">Data Operator</a>
-                                    <a class="dropdown-item" href="{{ url('admin/datasuper') }}">Data Supervisor</a>
+                                    <a class="dropdown-item" href="{{ url('dataadmin') }}">Data Admin</a>
+                                    <a class="dropdown-item" href="{{ url('dataoperator') }}">Data Operator</a>
+                                    <a class="dropdown-item" href="{{ url('datasuper') }}">Data Supervisor</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

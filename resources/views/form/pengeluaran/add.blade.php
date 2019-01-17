@@ -7,11 +7,8 @@ Add Pengeluaran
   <div class="row justify-content-center">
     <div class="col-md-8">
       <hr>
-      @if(Auth::user()->role == 1)
-      <form action="{{url('admin/form/pengeluaran/save')}}" method="POST" enctype="multipart/form-data">
-      @elseif(Auth::user()->role == 3)
-      <form action="{{url('/form/pengeluaran/save')}}" method="POST" enctype="multipart/form-data">
-      @endif
+      <form action="{{url('form/pengeluaran/save')}}" method="POST" enctype="multipart/form-data">
+        
       <label>Judul</label>
                 <?php
                 $saldo = \App\Saldo::where('id',1)->first();

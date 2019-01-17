@@ -18,11 +18,9 @@ Route::get('/saldo/{id}', 'SaldoController@saldo');
 Auth::routes();
 
 
-Route::group(['prefix' => 'admin'] , function(){
+Route::group(['prefix' => ''] , function(){
 	Route::group(['middleware' => 'admin'], function(){
-		Route::get('/', 'AdminController@indexadmin');
-		Route::get('/operator', 'AdminController@indexoperator');
-		Route::get('/super', 'AdminController@indexsuper');
+		Route::get('/admin', 'AdminController@indexadmin');
 		Route::get('/dataadmin', 'AdminController@dataadmin');
 		Route::get('/dataadmin/add', 'AdminController@addadmin');
 		Route::post('/dataadmin/save', 'AdminController@saveadmin');
@@ -78,7 +76,7 @@ Route::group(['prefix' => 'admin'] , function(){
 });
 
 Route::group(['prefix' => ''] , function() {
-	Route::group(['middleware' => 'super'] , function() {
+	Route::group(['middleware' => ['super' && 'admin']] , function() {
 		Route::get('super', 'AdminController@indexsuper');
 		Route::get('form/pemasukan', 'LaporanKeuanganController@indexpemasukan')->name('addpemasukan');
 		Route::get('form/pemasukan/add', 'LaporanKeuanganController@addpemasukan')->name('addpemasukan');
@@ -103,7 +101,7 @@ Route::group(['prefix' => ''] , function() {
 });
 
 Route::group(['prefix' => ''] , function() {
-	Route::group(['middleware' => 'operator'] , function() {
+	Route::group(['middleware' => ['operator' && 'admin']] , function() {
 		Route::get('operator', 'AdminController@indexoperator');
 		Route::get('form/uploadfile', 'UploadFileController@index')->name('adduploadfile');
 		Route::get('form/uploadfile/add', 'UploadFileController@add')->name('adduploadfile');
@@ -113,7 +111,7 @@ Route::group(['prefix' => ''] , function() {
 		Route::get('form/uploadfile/delete/{id}', 'UploadFileController@delete')->name('deleteuploadfile');
 		Route::get('form/uploadfile/download/{file}', 'UploadFileController@download')->name('downloaduploadfile');
 
-		Route::get('cekabsensi', 'CekAbsensiController@index')->name('index');
-		Route::get('cekabsensi/delete/{id}', 'CekAbsensiController@delete')->name('delete');
+		Route::get('cekabsensi', 'CekAbsensiController@index');
+		Route::get('cekabsensi/delete/{id}', 'CekAbsensiController@delete');
 	});
 });
