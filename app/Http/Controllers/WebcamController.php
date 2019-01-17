@@ -9,9 +9,9 @@ use \App\Webcam;
 use Carbon\Carbon;
 class WebcamController extends Controller
 {
-    public function index()
+    public function welcome()
     {
-        return view('webcam.index');
+        return view('welcome');
     }
 
     public function save(Request $r)
