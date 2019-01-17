@@ -29,7 +29,7 @@ Cek Absensi
               <td>{{$q->created_at}}</td>
               <td><img src="{{url('uploads/'.$q->foto)}}" style="width: 50%;height: 50%;"></td>
               <td>
-                 <a href="{{url('form/cekabsensi/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
+                 <a href="{{url('cekabsensi/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
               </td>
             </tr>
