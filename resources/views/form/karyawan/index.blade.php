@@ -41,9 +41,9 @@ Karyawan
               <td>{{$q->keterangan}}</td>
               <td>{{$q->rincian}}</td>
               <td>
-                <a href="{{url('admin/form/karyawan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-edit-square"></i>
+                <a href="{{url('form/karyawan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-edit-square"></i>
                 </a>
-                 <a href="{{url('admin/form/karyawan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
+                 <a href="{{url('form/karyawan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm"><i class="fas fa-delete-square"></i>
                  </a>
               </td>
@@ -53,7 +53,7 @@ Karyawan
         </table>
         </div>
         <hr>
-          <a href="{{url('admin/form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
+          <a href="{{url('form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
       </div>
     </div>
 @endsection
