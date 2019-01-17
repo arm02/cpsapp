@@ -40,13 +40,13 @@
                     @if(Auth::user()->role == 1)
                     <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
+                                <a class="nav-link" href="{{ url('admin/form/pemasukan') }}">Laporan Pemasukan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
+                                <a class="nav-link" href="{{ url('admin/form/pengeluaran') }}">Laporan Pengeluaran</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
+                                <a class="nav-link" href="{{ url('admin/form/uploadfile') }}">Laporan File</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('admin/cekabsensi') }}">Laporan Absensi</a>
