@@ -7,7 +7,7 @@ Tambah Karyawan
   <div class="row justify-content-center">
     <div class="col-md-8">
       <hr>
-      <form action="{{url('form/karyawan/save')}}" method="POST" enctype="multipart/form-data">
+      <form action="{{url('admin/form/karyawan/save')}}" method="POST" enctype="multipart/form-data">
        <label for="judul">Nama</label>
         <input type="text" class="form-control" name="nama" id="inputEmail4" placeholder="Nama">
           <label for="judul">Alamat</label>

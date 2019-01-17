@@ -7,8 +7,11 @@ Add Pengeluaran
   <div class="row justify-content-center">
     <div class="col-md-8">
       <hr>
-      <form action="{{url('form/pengeluaran/save')}}" method="POST" enctype="multipart/form-data">
-        
+      @if(Auth::user()->role == 1)
+      <form action="{{url('admin/form/pengeluaran/save')}}" method="POST" enctype="multipart/form-data">
+      @elseif(Auth::user()->role == 3)
+      <form action="{{url('/form/pengeluaran/save')}}" method="POST" enctype="multipart/form-data">
+      @endif
       <label>Judul</label>
     <input type="text" class="form-control" name="judul" id="inputEmail4" placeholder="Judul">
       <label>Jumlah Pengeluaran</label>

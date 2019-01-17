@@ -67,6 +67,12 @@ Route::group(['prefix' => 'admin'] , function(){
 		Route::get('form/uploadfile/download/{file}', 'UploadFileController@download')->name('downloaduploadfile');
 		Route::get('cekabsensi', 'CekAbsensiController@index')->name('index');
 		Route::get('cekabsensi/delete/{id}', 'CekAbsensiController@delete')->name('delete');
+		Route::get('form/karyawan', 'KaryawanController@index');
+		Route::get('form/karyawan/add', 'KaryawanController@add');
+		Route::post('form/karyawan/save', 'KaryawanController@save');
+		Route::get('form/karyawan/edit/{id}', 'KaryawanController@edit');
+		Route::post('form/karyawan/update', 'KaryawanController@update');
+		Route::get('form/karyawan/delete/{id}', 'KaryawanController@delete');
 	});
 });
 
@@ -86,6 +92,12 @@ Route::group(['prefix' => ''] , function() {
 		Route::get('form/pengeluaran/edit/{id}', 'LaporanKeuanganController@editpengeluaran')->name('editpengeluaran');
 		Route::post('form/pengeluaran/update', 'LaporanKeuanganController@updatepengeluaran')->name('updatepengeluaran');
 		Route::get('form/pengeluaran/delete/{id}', 'LaporanKeuanganController@deletepengeluaran')->name('deletepengeluaran');
+		Route::get('form/karyawan', 'KaryawanController@index');
+		Route::get('form/karyawan/add', 'KaryawanController@add');
+		Route::post('form/karyawan/save', 'KaryawanController@save');
+		Route::get('form/karyawan/edit/{id}', 'KaryawanController@edit');
+		Route::post('form/karyawan/update', 'KaryawanController@update');
+		Route::get('form/karyawan/delete/{id}', 'KaryawanController@delete');
 	});
 });
 

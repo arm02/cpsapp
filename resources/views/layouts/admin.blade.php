@@ -51,6 +51,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('admin/cekabsensi') }}">Laporan Absensi</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('admin/form/karyawan') }}">Karyawan</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Data User <span class="caret"></span>
@@ -145,11 +148,11 @@
         </main>
     </div>
 
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace( 'ckeditor' );
     </script>
-    <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 </html>
