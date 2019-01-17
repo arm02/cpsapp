@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CekAbsensi;
+use Illuminate\Support\Facades\Auth;
 
 class CekAbsensiController extends Controller
 {
@@ -22,6 +23,9 @@ class CekAbsensiController extends Controller
     {
         $c = CekAbsensi::find($id);
         $c->delete();
-        return redirect(url('form/cekabsensi'));
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/cekabsensi'));
+        }
+        return redirect(url('cekabsensi'));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Karyawan;
 
 class KaryawanController extends Controller
@@ -35,6 +36,9 @@ class KaryawanController extends Controller
     	$k->keterangan = $r->input('keterangan');
     	$k->rincian = $r->input('rincian');
     	$k->save();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/karyawan'));
+        }
     	return redirect(url('form/karyawan'));	
     }
 
@@ -57,6 +61,9 @@ class KaryawanController extends Controller
     	$k->keterangan = $r->input('keterangan');
     	$k->rincian = $r->input('rincian');
     	$k->save();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/karyawan'));
+        }
     	return redirect(url('form/karyawan'));
     }
 
@@ -64,6 +71,9 @@ class KaryawanController extends Controller
     {
     	$k =  Karyawan::find($id);
     	$k->delete();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/karyawan'));
+        }
     	return redirect(url('form/karyawan'));
     }
 }

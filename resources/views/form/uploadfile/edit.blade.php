@@ -7,7 +7,11 @@ Edit Upload
   <div class="row justify-content-center">
     <div class="col-md-8">
       <hr>
+      @if(Auth::user()->role == 1)
+      <form action="{{ url ('admin/form/uploadfile/update')}}" method="POST" enctype="multipart/form-data">
+      @elseif(Auth::user()->role == 2)
       <form action="{{ url ('form/uploadfile/update')}}" method="POST" enctype="multipart/form-data">
+      @endif
           <label for="judul">Nama</label>
         <input type="text" class="form-control" name="nama" id="inputEmail4" value="{{ $l->nama }}" placeholder="Nama">
           <label for="judul">File</label>
@@ -15,7 +19,7 @@ Edit Upload
           @csrf
           <br>
           <input type="hidden" name="id" value="{{$l->id}}">
-          <button class="btn btn-outline-success float-right" type="submit">Update Data</button>
+          <button class="btn btn-primary float-right btn-lg" type="submit"><i class="fas fa-pen"></i></button>
         </form>
       </form>
 

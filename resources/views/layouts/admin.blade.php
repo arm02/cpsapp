@@ -16,11 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}"></script>
+    <link href="{{ asset('fontawesome-free-5.5.0-web/css/all.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -39,82 +37,122 @@
 
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
+                    @if(Auth::user()->role == 1)
                     <ul class="navbar-nav ml-auto">
-<<<<<<< HEAD
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
+                                <a class="nav-link" href="{{ url('admin/form/pemasukan') }}">Laporan Pemasukan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
+                                <a class="nav-link" href="{{ url('admin/form/pengeluaran') }}">Laporan Pengeluaran</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('admin/form/uploadfile') }}">Laporan File</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('admin/cekabsensi') }}">Laporan Absensi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('admin/form/karyawan') }}">Karyawan</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Data User <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('admin/dataadmin') }}">Data Admin</a>
+                                    <a class="dropdown-item" href="{{ url('admin/dataoperator') }}">Data Operator</a>
+                                    <a class="dropdown-item" href="{{ url('admin/datasuper') }}">Data Supervisor</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                    </ul>
+                    @endif
+
+                    @if(Auth::user()->role == 2)
+                    <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('cekabsensi') }}">Laporan Absensi</a>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                    </ul>
+                    @endif
+
+                    @if(Auth::user()->role == 3)
+                    <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/dataadmin') }}">Data Admin</a>
+                                <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/dataoperator') }}">Data Operator</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/datasuper') }}">Data Supervisor</a>
+                                <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-=======
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('form/pemasukan') }}">Laporan Pemasukan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('form/pengeluaran') }}">Laporan Pengeluaran</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('form/uploadfile') }}">Laporan File</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('cekabsensi') }}">Laporan Absensi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('form/karyawan') }}">Laporan Karyawan</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
->>>>>>> a6960a08eb5aa69fb9a8a4ed72dbc9548869671b
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                    </ul>
+                    @endif
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <main class="py-4">
-        @yield('content')
-    </main>
-</div>
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
 
-<script src="{{ asset ('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-<script>
-    CKEDITOR.replace( 'ckeditor' );
-</script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'ckeditor' );
+    </script>
 
 </body>
 </html>
