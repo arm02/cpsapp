@@ -9,6 +9,10 @@ Add Pemasukan
       <hr>
       <form action="{{url('form/pemasukan/save')}}" method="POST" enctype="multipart/form-data">
       <label>Judul</label>
+                <?php
+                $saldo = \App\Saldo::where('id',1)->first();
+                ?>
+    <input type="hidden" name="saldo" value="{{$saldo->saldo}}">
     <input type="text" class="form-control" name="judul" id="inputEmail4" placeholder="Judul">
       <label>Jumlah Pemasukan</label>
     <input type="text" class="form-control" name="jumlah" id="inputEmail4" placeholder="Jumlah Pemasukan">

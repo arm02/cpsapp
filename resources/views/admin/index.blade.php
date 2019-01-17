@@ -15,6 +15,10 @@ Admin Dasboard
                         <hr>
                         <h6>Silahkan pilih menu di navbar</h6>
                         <hr>
+                        <?php
+                        $saldo = \App\Saldo::where('id',1)->first();
+                        ?>
+                        <h2><i class="far fa-money-bill-alt"></i> Saldo Anda : {{$saldo->saldo}}</h2>
                     </center>
                 </div>
             </div>
