@@ -13,6 +13,10 @@ Add Pengeluaran
       <form action="{{url('/form/pengeluaran/save')}}" method="POST" enctype="multipart/form-data">
       @endif
       <label>Judul</label>
+                <?php
+                $saldo = \App\Saldo::where('id',1)->first();
+                ?>
+    <input type="hidden" name="saldo" value="{{$saldo->saldo}}">
     <input type="text" class="form-control" name="judul" id="inputEmail4" placeholder="Judul">
       <label>Jumlah Pengeluaran</label>
     <input type="text" class="form-control" name="jumlah" id="inputEmail4" placeholder="Jumlah Pemasukan">

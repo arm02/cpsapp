@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Response;
 use DB;
 use Excel;
 use App\Test;
+use App\Saldo;
 use Illuminate\Support\Facades\View; 
 use Illuminate\Support\Facades\Auth;    
 use PDF;
@@ -78,6 +79,13 @@ class LaporanKeuanganController extends Controller
     	$tipe = "1";
     	$l->tipe = $tipe;
     	$l->save();
+
+        $uang = $r->jumlah;
+        $q = $r->saldo;
+
+        $saldo = Saldo::find(1);
+        $saldo->saldo = $q + $uang;
+        $saldo->save();
         if (Auth::user()->role == 1) {
             return redirect(url('admin/form/pemasukan'));
         }
@@ -136,6 +144,13 @@ class LaporanKeuanganController extends Controller
     	$tipe = "2";
     	$l->tipe = $tipe;
     	$l->save();
+
+        $uang = $r->jumlah;
+        $q = $r->saldo;
+
+        $saldo = Saldo::find(1);
+        $saldo->saldo = $q - $uang;
+        $saldo->save();
         if (Auth::user()->role == 1) {
             return redirect(url('admin/form/pengeluaran'));
         }

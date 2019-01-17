@@ -13,7 +13,7 @@
 
 Route::get('/', 'WebcamController@welcome');
 Route::post('/absensi/save', 'WebcamController@save');
-
+Route::get('/saldo/{id}', 'SaldoController@saldo');
 
 Auth::routes();
 
