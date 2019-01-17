@@ -15,6 +15,10 @@ form > input { margin-right: 15px; }
         Absensi
     </div>
     <div class="card-body">
+        <div class="text-center">
+            <img src="../gambar/capstone.jpeg" class="rounded" alt="..." style="width: 300px;height: 300px;">
+        </div>
+    <div class="card-body">
     
     <div id="my_camera" style="display: none;"></div>
     <script type="text/javascript" src="../webcam.min.js"></script>
@@ -74,7 +78,7 @@ form > input { margin-right: 15px; }
 
     </div>
     <div class="card-footer text-muted">
-        Casptone Indonesia
+        Copyright ©2019 Casptone Indonesia
     </div>
 </div>
 </div>

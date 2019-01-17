@@ -14,7 +14,14 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="{{ asset('my-login/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('my-login/css/my-login.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+
+    <script src="{{url('my-login/js/jquery.min.js')}}"></script>
+    <script src="{{url('my-login/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('my-login/js/my-login.js')}}"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
