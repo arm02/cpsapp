@@ -11,14 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@welcome');
+Route::get('/', 'WebcamController@welcome');
+Route::post('/absensi/save', 'WebcamController@save');
 
-Route::post('/webcam/save', 'WebcamController@save');
-Route::get('/webcam/', 'WebcamController@index');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
 
 Route::group(['prefix' => 'admin'] , function(){
 	Route::group(['middleware' => 'admin'], function(){
