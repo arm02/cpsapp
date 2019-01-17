@@ -15,6 +15,12 @@ class SuperMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $user = $request->user();
+        if ($user){
+            if($user->isSuper()){
+            return $next($request); 
+            }
+        }
+        return abort(403);
     }
 }

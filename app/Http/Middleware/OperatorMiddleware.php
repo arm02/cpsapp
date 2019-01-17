@@ -15,6 +15,12 @@ class OperatorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $user = $request->user();
+        if ($user){
+            if($user->isOperator()){
+            return $next($request); 
+            }
+        }
+        return abort(403);
     }
 }
