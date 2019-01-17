@@ -71,6 +71,9 @@ Route::group(['prefix' => 'admin'] , function(){
 		Route::get('form/karyawan/edit/{id}', 'KaryawanController@edit');
 		Route::post('form/karyawan/update', 'KaryawanController@update');
 		Route::get('form/karyawan/delete/{id}', 'KaryawanController@delete');
+		Route::get('form/visimisi', 'VisiMisiController@index')->name('visimisi');
+		Route::get('form/visimisi/edit/{id}', 'VisiMisiController@edit')->name('editvisimisi');
+		Route::post('form/visimisi/update', 'VisiMisiController@update')->name('updatevisimisi');
 	});
 });
 

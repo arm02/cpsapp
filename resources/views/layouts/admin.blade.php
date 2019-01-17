@@ -54,6 +54,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('admin/form/karyawan') }}">Karyawan</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('admin/form/visimisi') }}">Visi Misi</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Data User <span class="caret"></span>
@@ -153,6 +156,8 @@
     <script>
         CKEDITOR.replace( 'ckeditor' );
     </script>
-
+    <script>
+        CKEDITOR.replace( 'ckeditor2' );
+    </script>
 </body>
 </html>
