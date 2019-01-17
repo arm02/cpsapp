@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.login')
 
 @section('content')
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
                         <img src="{{url('my-login/img/capstone.jpeg')}}" class="img-responsive" alt="Cinque Terre">
                     </div>               
                         <div class="card-body">
-                            <h4 class="card-title" style="text-align: center;">Login</h4>
+                            <h4 class="card-title" style="text-align: center;"></h4>
                             <form method="POST">
                              
                                 <div class="form-group">
@@ -46,7 +46,7 @@
                                     </button>
                                 </div>  
                                 <div class="margin-top20 text-center">
-                                    Don't have an account? <a href="register.html">Create One</a>
+                                    Copyright ©2019 Casptone Indonesia
                                 </div>
                             </form>
                         </div>
