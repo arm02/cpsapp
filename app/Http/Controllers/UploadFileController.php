@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use App\UploadFile;
 use Hash;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Auth;
 use DB;
 use Excel;
 use App\Test;
@@ -59,6 +60,9 @@ class UploadFileController extends Controller
         }
         $l->nama = $r->input('nama');
     	$l->save();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/uploadfile'));
+        }
     	return redirect(url('form/uploadfile'));
     }
 
@@ -78,6 +82,9 @@ class UploadFileController extends Controller
             $l->file = $file;
         }
     	$l->save();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/uploadfile'));
+        }
     	return redirect(url('form/uploadfile'));
     }
 
@@ -85,7 +92,10 @@ class UploadFileController extends Controller
     {
     	$l =  UploadFile::find($id);
     	$l->delete();
-    	return redirect(url('form/uploadfile'));
+    if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/uploadfile'));
+        }
+        return redirect(url('form/uploadfile'));
     }
 
     public function download($file)

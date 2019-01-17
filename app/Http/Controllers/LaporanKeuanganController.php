@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Response;
 use DB;
 use Excel;
 use App\Test;
-use Illuminate\Support\Facades\View;    
+use Illuminate\Support\Facades\View; 
+use Illuminate\Support\Facades\Auth;    
 use PDF;
 use Expection;
 
@@ -77,6 +78,9 @@ class LaporanKeuanganController extends Controller
     	$tipe = "1";
     	$l->tipe = $tipe;
     	$l->save();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/pemasukan'));
+        }
     	return redirect(url('form/pemasukan'));
     }
 
@@ -96,6 +100,9 @@ class LaporanKeuanganController extends Controller
     	$tipe = "1";
     	$l->tipe = $tipe;
     	$l->save();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/pemasukan'));
+        }
     	return redirect(url('form/pemasukan'));
     }
 
@@ -103,6 +110,9 @@ class LaporanKeuanganController extends Controller
     {
     	$l =  LaporanKeuangan::find($id);
     	$l->delete();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/pemasukan'));
+        }
     	return redirect(url('form/pemasukan'));
     }
 
@@ -126,6 +136,9 @@ class LaporanKeuanganController extends Controller
     	$tipe = "2";
     	$l->tipe = $tipe;
     	$l->save();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/pengeluaran'));
+        }
     	return redirect(url('form/pengeluaran'));
     }
 
@@ -145,6 +158,9 @@ class LaporanKeuanganController extends Controller
     	$tipe = "2";
     	$l->tipe = $tipe;
     	$l->save();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/pengeluaran'));
+        }
     	return redirect(url('form/pengeluaran'));
     }
 
@@ -152,6 +168,9 @@ class LaporanKeuanganController extends Controller
     {
     	$l =  LaporanKeuangan::find($id);
     	$l->delete();
+        if (Auth::user()->role == 1) {
+            return redirect(url('admin/form/pengeluaran'));
+        }
     	return redirect(url('form/pengeluaran'));
     }
 }	

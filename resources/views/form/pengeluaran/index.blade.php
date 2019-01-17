@@ -31,13 +31,23 @@ Pemasukan
               <td>{{$q->tanggal}}</td>
               <td>{!!$q->rincian!!}</td>
               <td>
-                <a href="{{url('form/pengeluaran/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm">
+                @if(Auth::user()->role == 1)
+                <a href="{{url('admin/form/pengeluaran/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm">
                   <i class="fas fa-edit"></i>
                 </a>
-                 <a href="{{url('form/pengeluaran/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
+                 <a href="{{url('admin/form/pengeluaran/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm">
                    <i class="fas fa-trash-alt"></i>
                  </a>
+                 @elseif(Auth::user()->role == 3)
+                 <a href="{{url('/form/pengeluaran/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm">
+                  <i class="fas fa-edit"></i>
+                </a>
+                 <a href="{{url('/form/pengeluaran/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
+                 class="btn btn-outline-danger btn-sm">
+                   <i class="fas fa-trash-alt"></i>
+                 </a>
+                 @endif
               </td>
             </tr>
             @endforeach
@@ -45,14 +55,26 @@ Pemasukan
         </table>
         </div>
         <hr>
-          <a href="{{url('form/pengeluaran/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
-
+        @if(Auth::user()->role == 1)
+          <a href="{{url('admin/form/pengeluaran/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
+          @elseif(Auth::user()->role == 3)
+          <a href="{{url('/form/pengeluaran/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
+          @endif
+          @if(Auth::user()->role == 1)
+          <div style="float: right;">
+            <a href="{{ url('admin/form/pengeluaran/pdf')}}">
+              <button class="btn btn-outline-primary">Download PDF</button></a>
+              
+            <a href="{{ url('admin/form/pengeluaran/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+          </div>
+          @elseif(Auth::user()->role = 3)
           <div style="float: right;">
             <a href="{{ url('/form/pengeluaran/pdf')}}">
               <button class="btn btn-outline-primary">Download PDF</button></a>
               
             <a href="{{ url('/form/pengeluaran/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
           </div>
+          @endif
       </div>
     </div>
 @endsection
