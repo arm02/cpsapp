@@ -45,19 +45,30 @@ Pemasukan
         </table>
         </div>
         <hr>
+        <div class="">
+          <label>   </label>
+        </div>
+
+        <div class="row">
           <a href="{{url('/form/pemasukan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
 
           
-          <div style="float:right; ">
             <a href="{{ url('/form/pemasukan/pdf')}}">
               <button class="btn btn-outline-primary">Download PDF</button></a>
               
             <a href="{{ url('/form/pemasukan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
-            <form style="border: 2px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ URL('form/pemasukan/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+
+
+            <form  action="{{ URL('form/pemasukan/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
               @csrf
-              <input type="file" name="LaporanPemasukan" />
+
+
+
+              <input type="file" name="LaporanPemasukan" style="margin-left: 380px" />
               <button class="btn btn-outline-success">Import Excel</button>
             </form>
+
+          </div>
           </div>
       </div>
     </div>
