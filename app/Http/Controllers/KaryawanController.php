@@ -12,6 +12,7 @@ use App\Test;
 use Illuminate\Support\Facades\View;    
 use PDF;
 use Expection;
+use Carbon\Carbon;
 
 class KaryawanController extends Controller
 {	
@@ -31,8 +32,9 @@ class KaryawanController extends Controller
     }
      public function downloadExcelid($id)
     {
+        $date = \Carbon\Carbon::now()->format('d F Y');
         $data = Karyawan::all()->where('id',$id);
-        return Excel::create('LaporanKaryawan', function($excel) use ($data) {
+        return Excel::create('LaporanKaryawanPerID_'.$date, function($excel) use ($data) {
             $excel->sheet('mySheet', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
@@ -41,22 +43,23 @@ class KaryawanController extends Controller
     }
     public function pdf()
     {
-
+        $date = \Carbon\Carbon::now()->format('d F Y');
     $pen = Karyawan::all();
       $pdf = PDF::loadView('form.karyawan.pdf');
-      return $pdf->download('LaporanKaryawan.pdf');
+      return $pdf->download('LaporanKaryawan_'.$date.'.pdf');
     }
     public function pdfid($id)
     {
+        $date = \Carbon\Carbon::now()->format('d F Y');
         $q = Karyawan::find($id);
         $pdf = PDF::loadView('form.karyawan.pdfid',compact('q'));
-        return $pdf->download('LaporanKaryawanPerID.pdf');
+        return $pdf->download('LaporanKaryawanPerID_'.$date.'.pdf');
     }
     public function downloadExcel($type)
     {
         $data = Karyawan::all();
-            
-        return Excel::create('LaporanKaryawan', function($excel) use ($data) {
+            $date = \Carbon\Carbon::now()->format('d F Y');
+        return Excel::create('LaporanKaryawan_'.$date, function($excel) use ($data) {
             $excel->sheet('mySheet', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
