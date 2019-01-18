@@ -3,15 +3,19 @@
 <head>
   <title></title>
   <style type="text/css">
-    table, th, td{
-      border: 1px solid black;
-      border-collapse: collapse;
-      margin: auto;
-    }
-    th, td {
-      padding: 5px;
-      text-align: left;
-    }
+    table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
      .footer {
    position: absolute;
    left: 0;
@@ -45,7 +49,7 @@
               ?>
               @foreach($l as $q)
             <tr>
-              <th scope="row">{{$i++}}</th>
+              <th>{{$q->id}}</th>
               <td>{{$q->judul}}</td>
               <td>{{$q->jumlah}}</td>
               <td>{{$q->tanggal}}</td>

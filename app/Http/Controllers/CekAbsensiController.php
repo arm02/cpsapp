@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CekAbsensi;
 use Illuminate\Support\Facades\Auth;
+use DB;
+use Excel;
+use App\Test;
+use Illuminate\Support\Facades\View;    
+use PDF;
+use Expection;
+
 
 class CekAbsensiController extends Controller
 {
@@ -28,4 +35,12 @@ class CekAbsensiController extends Controller
         }
         return redirect(url('cekabsensi'));
     }
+     public function pdf()
+    {
+
+    $test = CekAbsensi::all();
+      $pdf = PDF::loadView('form.cekabsensi.pdf');
+      return $pdf->download('LaporanCekAbsensi.pdf');
+    }
+   
 }

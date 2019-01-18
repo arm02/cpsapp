@@ -14,7 +14,7 @@ table {
 }
 
 th, td {
-  padding: 15px;
+  padding: 10px;
 }
      .footer {
    position: absolute;
@@ -35,26 +35,31 @@ th, td {
 <table>
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Judul</th>
-      <th>Jumlah</th>
-      <th>tanggal</th>
-      <th>Rincian</th>
+       <th>ID</th>
+              <th>Nama</th>
+              <th>Alamat</th>
+              <th>No Telepon</th>
+              <th>Tanggal Masuk</th>
+              <th>Gaji Pokok</th>
+              <th>Tunjangan</th>
+              <th>Status</th>
+              <th>Keterangan</th>
+              <th>Rincian</th>
     </tr>
   </thead>
   <tbody>
-    <?php
-              $i= 1;
-              $l = \App\LaporanKeuangan::all()->where('tipe',2  );
-              ?>
-              @foreach($l as $q)
             <tr>
-              <th>{{$q->id}}</th>
-              <td>{{$q->judul}}</td>
-              <td>{{$q->jumlah}}</td>
-              <td>{{$q->tanggal}}</td>
-              <td>{!!$q->rincian!!}</td>
-              @endforeach
+              <td>{{$q->id}}</td>
+             <td>{{$q->nama}}</td>
+              <td>{{$q->alamat}}</td>
+              <td>{{$q->telpon}}</td>
+              <td>{{$q->tanggalmasuk}}</td>
+              <td>{{$q->gajipokok}}</td>
+              <td>{{$q->tunjangan}}</td>
+              <td>{{$q->status}}</td>
+              <td>{{$q->keterangan}}</td>
+              <td>{{$q->rincian}}</td>
+            
   </tbody>
 </table>
 

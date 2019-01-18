@@ -52,6 +52,39 @@ class LaporanKeuanganController extends Controller
             });
         })->download($type);
     }
+    public function pdfid($id)
+    {
+        $pdfid = LaporanKeuangan::find($id);
+        $pdf = PDF::loadView('form.pemasukan.pdfid',compact('pdfid'));
+        return $pdf->download('LaporanPemasukanPerID.pdf');
+    }
+    public function pdfid1($id)
+    {
+        $pdfid = LaporanKeuangan::find($id);
+        $pdf = PDF::loadView('form.pengeluaran.pdfid',compact('pdfid'));
+        return $pdf->download('LaporanPemasukanPerID.pdf');
+    }
+    public function downloadExcelid1($id)
+    {
+        $data = LaporanKeuangan::all()->where('id',$id);
+        return Excel::create('LaporanPengeluaran', function($excel) use ($data) {
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            });
+        })->download('xlsx');
+    }
+    public function downloadExcelid($id)
+    {
+        $data = LaporanKeuangan::all()->where('id',$id);
+        return Excel::create('LaporanPemasukan', function($excel) use ($data) {
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            });
+        })->download('xlsx');
+    }
+
      public function downloadExcel1($type)
     {
         $data = LaporanKeuangan::all()->where('tipe',2);
@@ -87,7 +120,7 @@ class LaporanKeuanganController extends Controller
         $saldo->saldo = $q + $uang;
         $saldo->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pemasukan'));
+            return redirect(url('form/pemasukan'));
         }
     	return redirect(url('form/pemasukan'));
     }
@@ -109,7 +142,7 @@ class LaporanKeuanganController extends Controller
     	$l->tipe = $tipe;
     	$l->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pemasukan'));
+            return redirect(url('form/pemasukan'));
         }
     	return redirect(url('form/pemasukan'));
     }
@@ -119,7 +152,7 @@ class LaporanKeuanganController extends Controller
     	$l =  LaporanKeuangan::find($id);
     	$l->delete();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pemasukan'));
+            return redirect(url('form/pemasukan'));
         }
     	return redirect(url('form/pemasukan'));
     }
@@ -152,7 +185,7 @@ class LaporanKeuanganController extends Controller
         $saldo->saldo = $q - $uang;
         $saldo->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pengeluaran'));
+            return redirect(url('form/pengeluaran'));
         }
     	return redirect(url('form/pengeluaran'));
     }
@@ -160,7 +193,7 @@ class LaporanKeuanganController extends Controller
     public function editpengeluaran($id)
     {	
     	$l = LaporanKeuangan::find($id);
-    	return view('form/pengeluaran/edit')->with('l', $l);
+    	return view('pengeluaran/edit')->with('l', $l);
     }
 
     public function updatepengeluaran(Request $r)
@@ -174,7 +207,7 @@ class LaporanKeuanganController extends Controller
     	$l->tipe = $tipe;
     	$l->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pengeluaran'));
+            return redirect(url('form/pengeluaran'));
         }
     	return redirect(url('form/pengeluaran'));
     }
@@ -184,7 +217,7 @@ class LaporanKeuanganController extends Controller
     	$l =  LaporanKeuangan::find($id);
     	$l->delete();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pengeluaran'));
+            return redirect(url('form/pengeluaran'));
         }
     	return redirect(url('form/pengeluaran'));
     }

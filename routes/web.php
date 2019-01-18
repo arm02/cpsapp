@@ -48,12 +48,24 @@ Route::group(['prefix' => ''] , function(){
 		Route::get('form/pemasukan/edit/{id}', 'LaporanKeuanganController@editpemasukan')->name('editpemasukan');
 		Route::post('form/pemasukan/update', 'LaporanKeuanganController@updatepemasukan')->name('updatepemasukan');
 		Route::get('form/pemasukan/delete/{id}', 'LaporanKeuanganController@deletepemasukan')->name('deletepemasukan');
+		// START PDF ROUTE PEMASUKKAN
+		Route::get('form/pemasukan/pdf','LaporanKeuanganController@pdf');
+		Route::get('form/pemasukan/downloadExcel/{type}','LaporanKeuanganController@downloadExcel');
+		Route::get('form/pemasukan/pdfid/{id}','LaporanKeuanganController@pdfid');
+		Route::get('form/pemasukan/downloadExcelid/{id}','LaporanKeuanganController@downloadExcelid');
+		// END PDF ROUTE PEMASUKKAN
 		Route::get('form/pengeluaran', 'LaporanKeuanganController@indexpengeluaran')->name('addpengeluaran');
 		Route::get('form/pengeluaran/add', 'LaporanKeuanganController@addpengeluaran')->name('addpengeluaran');
 		Route::post('form/pengeluaran/save', 'LaporanKeuanganController@savepengeluaran')->name('savepengeluaran');
 		Route::get('form/pengeluaran/edit/{id}', 'LaporanKeuanganController@editpengeluaran')->name('editpengeluaran');
 		Route::post('form/pengeluaran/update', 'LaporanKeuanganController@updatepengeluaran')->name('updatepengeluaran');
 		Route::get('form/pengeluaran/delete/{id}', 'LaporanKeuanganController@deletepengeluaran')->name('deletepengeluaran');
+		// START ROUTE PDF PENGELUARAN
+		Route::get('form/pengeluaran/downloadExcel1/{type}','LaporanKeuanganController@downloadExcel1');
+		Route::get('form/pengeluaran/pdf1','LaporanKeuanganController@pdf1');
+		Route::get('form/pengeluaran/downloadExcelid1/{id}','LaporanKeuanganController@downloadExcelid1');
+		Route::get('form/pengeluaran/pdfid1/{id}','LaporanKeuanganController@pdfid1');
+		// END PDF ROUTE PENGELUARAN
 		Route::get('form/uploadfile', 'UploadFileController@index')->name('adduploadfile');
 		Route::get('form/uploadfile/add', 'UploadFileController@add')->name('adduploadfile');
 		Route::post('form/uploadfile/save', 'UploadFileController@save')->name('saveuploadfile');
@@ -61,6 +73,12 @@ Route::group(['prefix' => ''] , function(){
 		Route::post('form/uploadfile/update', 'UploadFileController@update')->name('updateuploadfile');
 		Route::get('form/uploadfile/delete/{id}', 'UploadFileController@delete')->name('deleteuploadfile');
 		Route::get('form/uploadfile/download/{file}', 'UploadFileController@download')->name('downloaduploadfile');
+		// START ROUTE PDF CEK ABSENSI
+		Route::get('form/cekabsensi/pdf','CekAbsensiController@pdf');
+		Route::get('form/cekabsensi/downloadExcel/{type}','CekAbsensiController@downloadExcel');
+		Route::get('form/cekabsensi/pdfid/{id}','CekAbsensiController@pdfid');
+		Route::get('form/cekabsensi/downloadExcelid/{id}','CekAbsensiController@downloadExcelid');
+		// END ROUTE PDF CEK ABSENSI
 		Route::get('cekabsensi', 'CekAbsensiController@index')->name('index');
 		Route::get('cekabsensi/delete/{id}', 'CekAbsensiController@delete')->name('delete');
 		Route::get('form/karyawan', 'KaryawanController@index');
@@ -69,6 +87,12 @@ Route::group(['prefix' => ''] , function(){
 		Route::get('form/karyawan/edit/{id}', 'KaryawanController@edit');
 		Route::post('form/karyawan/update', 'KaryawanController@update');
 		Route::get('form/karyawan/delete/{id}', 'KaryawanController@delete');
+		// START ROUTE PDF KARYAWAN
+		Route::get('form/karyawan/pdfid/{id}','KaryawanController@pdfid');
+		Route::get('form/karyawan/downloadExcelid/{id}','KaryawanController@downloadExcelid');
+		Route::get('form/karyawan/pdf','KaryawanController@pdf');
+		Route::get('form/karyawan/downloadExcel/{type}','KaryawanController@downloadExcel');
+		// END ROUTE KARYAWAN PDF
 		Route::get('form/visimisi', 'VisiMisiController@index')->name('visimisi');
 		Route::get('form/visimisi/edit/{id}', 'VisiMisiController@edit')->name('editvisimisi');
 		Route::post('form/visimisi/update', 'VisiMisiController@update')->name('updatevisimisi');

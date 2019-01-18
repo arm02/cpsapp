@@ -36,6 +36,8 @@ Pemasukan
                  <a href="{{url('form/pemasukan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i>
                  </a>
+                 <a href="{{url('form/pemasukan/pdfid/'.$q->id)}}" class="btn btn-outline-success btn-sm">PDF</a>
+                 <a href="{{url('form/pemasukan/downloadExcelid/'.$q->id)}}" class="btn btn-outline-success btn-sm">EXCEL</a>
               </td>
             </tr>
             @endforeach               

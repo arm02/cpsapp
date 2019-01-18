@@ -14,7 +14,7 @@ table {
 }
 
 th, td {
-  padding: 15px;
+  padding: 10px;
 }
      .footer {
    position: absolute;
@@ -31,29 +31,26 @@ th, td {
  <img src="./gambar/capstone.jpeg" style="width: 100px; margin-left: 600px;">
 <h1 style="text-align: center">Capstone Indonesia</h1>
 <h1 style="text-align: center">IT Developer</h1>
-<h2>Laporan Pemasukan</h1>
+<h2>Laporan Cek Absensi</h1>
 <table>
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Judul</th>
-      <th>Jumlah</th>
-      <th>tanggal</th>
-      <th>Rincian</th>
+             <th>ID</th>
+              <th>Nama</th>
+              <th>Jam Masuk</th>
+              <th>Gambar</th>
     </tr>
   </thead>
   <tbody>
     <?php
-              $i= 1;
-              $l = \App\LaporanKeuangan::all()->where('tipe',2  );
+              $l = \App\CekAbsensi::all();
               ?>
               @foreach($l as $q)
             <tr>
-              <th>{{$q->id}}</th>
-              <td>{{$q->judul}}</td>
-              <td>{{$q->jumlah}}</td>
-              <td>{{$q->tanggal}}</td>
-              <td>{!!$q->rincian!!}</td>
+           <td>{{$q->id}}</td>
+           <td>{{$q->nama}}</td>
+           <td>{{$q->created_at}}</td>
+           <td><img src="./uploads/{{$q->gambar}}" style="width: 80px;"></td>
               @endforeach
   </tbody>
 </table>

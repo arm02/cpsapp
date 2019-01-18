@@ -34,10 +34,8 @@ Pemasukan
                 <a href="{{url('form/pengeluaran/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm">
                   <i class="fas fa-edit"></i>
                 </a>
-                 <a href="{{url('form/pengeluaran/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
-                 class="btn btn-outline-danger btn-sm">
-                   <i class="fas fa-trash-alt"></i>
-                 </a>
+                 <a href="{{url('form/pengeluaran/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')"> </a>
+                <a href="{{url('form/pengeluaran/pdfid1/'.$q->id)}}" class="btn btn-sm btn-outline-success">PDF</a>
               </td>
             </tr>
             @endforeach
@@ -45,13 +43,15 @@ Pemasukan
         </table>
         </div>
         <hr>
+
           <a href="{{url('form/pengeluaran/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
 
+
           <div style="float: right;">
-            <a href="{{ url('/form/pengeluaran/pdf')}}">
+            <a href="{{ url('/form/pengeluaran/pdf1')}}">
               <button class="btn btn-outline-primary">Download PDF</button></a>
               
-            <a href="{{ url('/form/pengeluaran/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+            <a href="{{ url('/form/pengeluaran/downloadExcel1/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
           </div>
       </div>
     </div>

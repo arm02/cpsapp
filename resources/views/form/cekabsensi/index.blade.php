@@ -30,17 +30,23 @@ Cek Absensi
               <td><img src="{{url('uploads/'.$q->foto)}}" style="width: 50%;height: 50%;"></td>
               <td>
                 @if(Auth::user()->role == 1)
-                 <a href="{{url('admin/cekabsensi/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
+                 <a href="{{url('cekabsensi/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
                 @elseif(Auth::user()->role == 2)
                 <a href="{{url('cekabsensi/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
                 @endif
               </td>
+          </div>
             </tr>
             @endforeach
           </tbody>
         </table>
+          </div>
+            <div style="float:right; ">
+            <a href="{{ url('form/cekabsensi/pdf')}}">
+             <button class="btn btn-outline-primary">Download PDF</button></a>
+          </div>
         </div>
         <hr>
       </div>
