@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\LaporanKeuangan;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Input;
 use DB;
 use Excel;
 use App\Test;
@@ -103,6 +104,42 @@ class LaporanKeuanganController extends Controller
         })->download($type);
     }
 
+    public function importExcel()
+    {
+        if(Input::hasFile('LaporanPemasukan')){
+            $path = Input::file('LaporanPemasukan')->getRealPath();
+            $data = Excel::load($path, function($reader) {
+            })->get();
+            if(!empty($data) && $data->count()){
+                foreach ($data as $key => $value) {
+                    $insert[] = ['judul' => $value->judul, 'jumlah' => $value->jumlah, 'tanggal' => $value->tanggal, 'rincian' => $value->rincian, 'tipe' => 1];
+                }
+                if(!empty($insert)){
+                    DB::table('laporan_keuangans')->insert($insert);
+                }
+            }
+        }
+        return back();
+    }
+
+    public function importExcel1()
+    {
+        if(Input::hasFile('LaporanPengeluaran')){
+            $path = Input::file('LaporanPengeluaran')->getRealPath();
+            $data = Excel::load($path, function($reader) {
+            })->get();
+            if(!empty($data) && $data->count()){
+                foreach ($data as $key => $value) {
+                    $insert[] = ['judul' => $value->judul, 'jumlah' => $value->jumlah, 'tanggal' => $value->tanggal, 'rincian' => $value->rincian, 'tipe' => 2];
+                }
+                if(!empty($insert)){
+                    DB::table('laporan_keuangans')->insert($insert);
+                }
+            }
+        }
+        return back();
+    }
+    
     public function addpemasukan()
     {
     	return view('form.pemasukan.add');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Karyawan;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Input;
 use DB;
 use Excel;
 use App\Test;
@@ -66,6 +67,25 @@ class KaryawanController extends Controller
             });
         })->download($type);
     }
+
+    public function importExcel()
+    {
+        if(Input::hasFile('Karyawan')){
+            $path = Input::file('Karyawan')->getRealPath();
+            $data = Excel::load($path, function($reader) {
+            })->get();
+            if(!empty($data) && $data->count()){
+                foreach ($data as $key => $value) {
+                    $insert[] = ['nama' => $value->nama, 'alamat' => $value->alamat, 'telpon' => $value->telpon, 'tanggalmasuk' => $value->tanggalmasuk, 'gajipokok' => $value->gajipokok, 'tunjangan' => $value->tunjangan, 'status' => $value->status, 'keterangan' => $value->keterangan, 'rincian' => $value->rincian];
+                }
+                if(!empty($insert)){
+                    DB::table('karyawans')->insert($insert);
+                }
+            }
+        }
+        return back();
+    }
+    
     public function save(Request $r)
     {
     	$k = new Karyawan;
