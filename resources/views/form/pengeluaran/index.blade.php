@@ -52,6 +52,11 @@ Pemasukan
               <button class="btn btn-outline-primary">Download PDF</button></a>
               
             <a href="{{ url('/form/pengeluaran/downloadExcel1/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+            <form style="border: 2px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ URL('form/pengeluaran/importExcel1') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+              @csrf
+              <input type="file" name="LaporanPengeluaran" />
+              <button class="btn btn-outline-success">Import Excel</button>
+            </form>
           </div>
       </div>
     </div>

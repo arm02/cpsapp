@@ -54,6 +54,7 @@ Route::group(['prefix' => ''] , function(){
 		Route::get('form/pemasukan/downloadExcel/{type}','LaporanKeuanganController@downloadExcel');
 		Route::get('form/pemasukan/pdfid/{id}','LaporanKeuanganController@pdfid');
 		Route::get('form/pemasukan/downloadExcelid/{id}','LaporanKeuanganController@downloadExcelid');
+		Route::post('form/pemasukan/importExcel', 'LaporanKeuanganController@importExcel');
 		// END PDF ROUTE PEMASUKKAN
 		Route::get('form/pengeluaran', 'LaporanKeuanganController@indexpengeluaran')->name('addpengeluaran');
 		Route::get('form/pengeluaran/add', 'LaporanKeuanganController@addpengeluaran')->name('addpengeluaran');
@@ -66,6 +67,7 @@ Route::group(['prefix' => ''] , function(){
 		Route::get('form/pengeluaran/pdf1','LaporanKeuanganController@pdf1');
 		Route::get('form/pengeluaran/downloadExcelid1/{id}','LaporanKeuanganController@downloadExcelid1');
 		Route::get('form/pengeluaran/pdfid1/{id}','LaporanKeuanganController@pdfid1');
+		Route::post('form/pengeluaran/importExcel1', 'LaporanKeuanganController@importExcel1');
 		// END PDF ROUTE PENGELUARAN
 		Route::get('form/uploadfile', 'UploadFileController@index')->name('adduploadfile');
 		Route::get('form/uploadfile/add', 'UploadFileController@add')->name('adduploadfile');
@@ -93,6 +95,7 @@ Route::group(['prefix' => ''] , function(){
 		Route::get('form/karyawan/downloadExcelid/{id}','KaryawanController@downloadExcelid');
 		Route::get('form/karyawan/pdf','KaryawanController@pdf');
 		Route::get('form/karyawan/downloadExcel/{type}','KaryawanController@downloadExcel');
+		Route::post('form/karyawan/importExcel','KaryawanController@importExcel');
 		// END ROUTE KARYAWAN PDF
 		Route::get('form/visimisi', 'VisiMisiController@index')->name('visimisi');
 		Route::get('form/visimisi/edit/{id}', 'VisiMisiController@edit')->name('editvisimisi');
