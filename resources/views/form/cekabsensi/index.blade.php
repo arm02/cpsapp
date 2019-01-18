@@ -32,8 +32,6 @@ Cek Absensi
                 @if(Auth::user()->role == 1)
                  <a href="{{url('cekabsensi/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
-                 <a href="{{url('form/cekabsensi/pdfid/'.$q->id)}}" class="btn btn-outline-success btn-sm">PDF</a>
-                 <a href="{{url('form/cekabsensi/downloadExcelid/'.$q->id)}}" class="btn btn-outline-success btn-sm">EXCEL</a>
                 @elseif(Auth::user()->role == 2)
                 <a href="{{url('cekabsensi/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i></a>
@@ -48,8 +46,6 @@ Cek Absensi
             <div style="float:right; ">
             <a href="{{ url('form/cekabsensi/pdf')}}">
              <button class="btn btn-outline-primary">Download PDF</button></a>
-              
-            <a href="{{ url('form/cekabsensi/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
           </div>
         </div>
         <hr>

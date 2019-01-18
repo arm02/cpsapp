@@ -42,31 +42,5 @@ class CekAbsensiController extends Controller
       $pdf = PDF::loadView('form.cekabsensi.pdf');
       return $pdf->download('LaporanCekAbsensi.pdf');
     }
-     public function pdfid($id)
-    {
-        $q = CekAbsensi::find($id);
-        $pdf = PDF::loadView('form.cekabsensi.pdfid',compact('q'));
-        return $pdf->download('LaporanCekAbsensiPerID.pdf');
-    }
-     public function downloadExcelid($id)
-    {
-        $data = CekAbsensi::all()->where('id',$id);
-        return Excel::create('LaporanCekAbsensi', function($excel) use ($data) {
-            $excel->sheet('mySheet', function($sheet) use ($data)
-            {
-                $sheet->fromArray($data);
-            });
-        })->download('xlsx');
-    }
-     public function downloadExcel($type)
-    {
-        $data = CekAbsensi::all();
-            
-        return Excel::create('LaporanCekAbsensi', function($excel) use ($data) {
-            $excel->sheet('mySheet', function($sheet) use ($data)
-            {
-                $sheet->fromArray($data);
-            });
-        })->download($type);
-    }
+   
 }
