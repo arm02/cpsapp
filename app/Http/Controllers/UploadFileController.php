@@ -61,7 +61,7 @@ class UploadFileController extends Controller
         $l->nama = $r->input('nama');
     	$l->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/uploadfile'));
+            return redirect(url('form/uploadfile'));
         }
     	return redirect(url('form/uploadfile'));
     }

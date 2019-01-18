@@ -41,13 +41,13 @@ Karyawan
               <td>{{$q->keterangan}}</td>
               <td>{{$q->rincian}}</td>
               <td>
-                <a href="{{url('form/karyawan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-edit-square"></i>
+                <a href="{{url('form/karyawan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fa fa-edit"></i>
                 </a>
                  <a href="{{url('form/karyawan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
-                 class="btn btn-outline-danger btn-sm"><i class="fas fa-delete-square"></i>
+                 class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i>
                  </a>
-                 <a href="{{url('form/karyawan/pdfid/'.$q->id)}}" class="btn btn-outline-success">PDF</a>
-                <a href="{{url('form/karyawan/downloadExcelid/'.$q->id)}}" class="btn btn-outline-success">EXCEL</a>
+                 <a href="{{url('form/karyawan/pdfid/'.$q->id)}}" class="btn btn-sm btn-outline-success">PDF</a>
+                <a href="{{url('form/karyawan/downloadExcelid/'.$q->id)}}" class="btn btn-sm btn-outline-success">EXCEL</a>
               </td>
             </tr>
             @endforeach               
