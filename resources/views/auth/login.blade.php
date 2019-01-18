@@ -18,14 +18,12 @@
             <div class="row justify-content-md-center h-100">
                 <div class="card-wrapper">
                     
-                    <div class="card fat" style="border-radius: 60px; margin-top: 10px; background-color: #ffffff">   
+                    <div class="card fat" style="border-radius: 60px; margin-top: 100px; background-color: #ffffff">   
                      <div class="brand" style="width: 200px; height: 200px;">
-                        <img src="{{url('my-login/img/capstone.jpeg')}}" class="img-responsive" alt="Cinque Terre">
+                        <img src="{{url('my-login/img/capstone.jpeg')}}" class="img-responsive" style="margin-top: 10px;">
                     </div>               
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center;"></h4>
+                        <div class="card-body" style="margin-bottom: 1000px;">
                             <form method="POST">
-                             
                                 <div class="form-group">
                                     <label for="email">E-Mail Address</label>
 
@@ -41,7 +39,7 @@
                                 
                                 <div class="form-group no-margin">
                                     <button type="submit" class="btn btn-primary btn-block">
-                                        Login
+                                        <i class="fas fa-arrow-right"></i>
                                     </button>
                                 </div>  
                                 <div class="margin-top20 text-center">
