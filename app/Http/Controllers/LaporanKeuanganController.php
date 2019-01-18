@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;    
 use PDF;
 use Expection;
+use Carbon\Carbon;
 
 
 class LaporanKeuanganController extends Controller
@@ -29,23 +30,24 @@ class LaporanKeuanganController extends Controller
     
     public function pdf()
     {
-
+    $date = \Carbon\Carbon::now()->format('d F Y');
     $test = LaporanKeuangan::all();
       $pdf = PDF::loadView('form.pemasukan.pdf');
-      return $pdf->download('LaporanPemasukan.pdf');
+      return $pdf->download('LaporanPemasukan_'.$date.'.pdf');
     }
     public function pdf1()
     {
 
     $pen = LaporanKeuangan::all();
+    $date = \Carbon\Carbon::now()->format('d F Y');
       $pdf = PDF::loadView('form.pengeluaran.pdf');
-      return $pdf->download('LaporanPengeluaran.pdf');
+      return $pdf->download('LaporanPengeluaran_'.$date.'.pdf');
     }
     public function downloadExcel($type)
     {
         $data = LaporanKeuangan::all()->where('tipe',1);
-            
-        return Excel::create('LaporanPemasukan', function($excel) use ($data) {
+            $date = \Carbon\Carbon::now()->format('d F Y');
+        return Excel::create('LaporanPemasukan_'.$date, function($excel) use ($data) {
             $excel->sheet('mySheet', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
@@ -54,20 +56,23 @@ class LaporanKeuanganController extends Controller
     }
     public function pdfid($id)
     {
+        $date = \Carbon\Carbon::now()->format('d F Y');
         $pdfid = LaporanKeuangan::find($id);
         $pdf = PDF::loadView('form.pemasukan.pdfid',compact('pdfid'));
-        return $pdf->download('LaporanPemasukanPerID.pdf');
+        return $pdf->download('LaporanPemasukanPerID_'.$date.'.pdf');
     }
     public function pdfid1($id)
     {
+        $date = \Carbon\Carbon::now()->format('d F Y');
         $pdfid = LaporanKeuangan::find($id);
         $pdf = PDF::loadView('form.pengeluaran.pdfid',compact('pdfid'));
-        return $pdf->download('LaporanPemasukanPerID.pdf');
+        return $pdf->download('LaporanPemasukanPerID_'.$date.'.pdf');
     }
     public function downloadExcelid1($id)
     {
+        $date = \Carbon\Carbon::now()->format('d F Y');
         $data = LaporanKeuangan::all()->where('id',$id);
-        return Excel::create('LaporanPengeluaran', function($excel) use ($data) {
+        return Excel::create('LaporanPengeluaranPerID_'.$date, function($excel) use ($data) {
             $excel->sheet('mySheet', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
@@ -76,8 +81,9 @@ class LaporanKeuanganController extends Controller
     }
     public function downloadExcelid($id)
     {
+        $date = \Carbon\Carbon::now()->format('d F Y');
         $data = LaporanKeuangan::all()->where('id',$id);
-        return Excel::create('LaporanPemasukan', function($excel) use ($data) {
+        return Excel::create('LaporanPemasukanPerID_'.$date, function($excel) use ($data) {
             $excel->sheet('mySheet', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
@@ -88,8 +94,8 @@ class LaporanKeuanganController extends Controller
      public function downloadExcel1($type)
     {
         $data = LaporanKeuangan::all()->where('tipe',2);
-            
-        return Excel::create('LaporanPengeluaran', function($excel) use ($data) {
+        $date = \Carbon\Carbon::now()->format('d F Y');
+        return Excel::create('LaporanPengeluaran_'.$date, function($excel) use ($data) {
             $excel->sheet('mySheet', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);

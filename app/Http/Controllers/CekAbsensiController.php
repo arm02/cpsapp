@@ -11,6 +11,7 @@ use App\Test;
 use Illuminate\Support\Facades\View;    
 use PDF;
 use Expection;
+use Carbon\Carbon;
 
 
 class CekAbsensiController extends Controller
@@ -37,10 +38,10 @@ class CekAbsensiController extends Controller
     }
      public function pdf()
     {
-
+        $date = \Carbon\Carbon::now()->format('d F Y');
     $test = CekAbsensi::all();
       $pdf = PDF::loadView('form.cekabsensi.pdf');
-      return $pdf->download('LaporanCekAbsensi.pdf');
+      return $pdf->download('LaporanCekAbsensi_'.$date.'.pdf');
     }
    
 }
