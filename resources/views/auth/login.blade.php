@@ -22,7 +22,7 @@
                      <div class="brand" style="width: 200px; height: 200px;">
                         <img src="{{url('my-login/img/capstone.jpeg')}}" class="img-responsive" style="margin-top: 10px;">
                     </div>               
-                        <div class="card-body" style="margin-bottom: 1000px;">
+                        <div class="card-body" style="margin-bottom: 1px;">
                             <form method="POST">
                                 <div class="form-group">
                                     <label for="email">E-Mail Address</label>
