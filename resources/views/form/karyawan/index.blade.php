@@ -55,18 +55,31 @@ Karyawan
         </table>
         </div>
         <hr>
-           <div style="float:right; ">
-            <a href="{{ url('form/karyawan/pdf')}}">
-              <button class="btn btn-outline-primary">Download PDF</button></a>
-              
+        <div class="">
+          <label>   </label>
+        </div>
+
+
+<div class="row">
+            <a href="{{url('form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
+            <a href="{{ url('form/karyawan/pdf')}}"><button class="btn btn-outline-primary">Download PDF</button></a>              
             <a href="{{ url('form/karyawan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
-            <form style="border: 2px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ URL('form/karyawan/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+
+            <form action="{{ URL('form/karyawan/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
               @csrf
-              <input type="file" name="Karyawan" />
+
+           
+
+
+              <input type="file" name="Karyawan"  style="margin-left: 380px"/>
               <button class="btn btn-outline-success">Import Excel</button>
             </form>
+
+
+
+
+              </div>
           </div>
-          <a href="{{url('form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
       </div>
     </div>
 @endsection
