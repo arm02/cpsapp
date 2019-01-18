@@ -41,13 +41,13 @@ Karyawan
               <td>{{$q->keterangan}}</td>
               <td>{{$q->rincian}}</td>
               <td>
-                <a href="{{url('admin/form/karyawan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fa fa-edit-square"></i>
+                <a href="{{url('form/karyawan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-edit-square"></i>
                 </a>
-                 <a href="{{url('admin/form/karyawan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
-                 class="btn btn-outline-danger btn-sm"><i class="fa fa-delete-square"></i>
+                 <a href="{{url('form/karyawan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
+                 class="btn btn-outline-danger btn-sm"><i class="fas fa-delete-square"></i>
                  </a>
-                 <a href="{{url('admin/form/cekabsensi/pdfid/'.$q->id)}}" class="btn btn-outline-success">PDF</a>
-                <a href="{{url('admin/form/cekabsensi/downloadExcelid/'.$q->id)}}" class="btn btn-outline-success">EXCEL</a>
+                 <a href="{{url('form/karyawan/pdfid/'.$q->id)}}" class="btn btn-outline-success">PDF</a>
+                <a href="{{url('form/karyawan/downloadExcelid/'.$q->id)}}" class="btn btn-outline-success">EXCEL</a>
               </td>
             </tr>
             @endforeach               
@@ -55,13 +55,13 @@ Karyawan
         </table>
         </div>
         <hr>
-          <a href="{{url('admin/form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
            <div style="float:right; ">
-            <a href="{{ url('admin/form/karyawan/pdf')}}">
+            <a href="{{ url('form/karyawan/pdf')}}">
               <button class="btn btn-outline-primary">Download PDF</button></a>
               
-            <a href="{{ url('admin/form/karyawan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+            <a href="{{ url('form/karyawan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
           </div>
+          <a href="{{url('form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
       </div>
     </div>
 @endsection

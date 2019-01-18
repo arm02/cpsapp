@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Response;
 use DB;
 use Excel;
 use App\Test;
+use App\Saldo;
 use Illuminate\Support\Facades\View; 
 use Illuminate\Support\Facades\Auth;    
 use PDF;
@@ -111,8 +112,15 @@ class LaporanKeuanganController extends Controller
     	$tipe = "1";
     	$l->tipe = $tipe;
     	$l->save();
+
+        $uang = $r->jumlah;
+        $q = $r->saldo;
+
+        $saldo = Saldo::find(1);
+        $saldo->saldo = $q + $uang;
+        $saldo->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pemasukan'));
+            return redirect(url('form/pemasukan'));
         }
     	return redirect(url('form/pemasukan'));
     }
@@ -134,7 +142,7 @@ class LaporanKeuanganController extends Controller
     	$l->tipe = $tipe;
     	$l->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pemasukan'));
+            return redirect(url('form/pemasukan'));
         }
     	return redirect(url('form/pemasukan'));
     }
@@ -144,7 +152,7 @@ class LaporanKeuanganController extends Controller
     	$l =  LaporanKeuangan::find($id);
     	$l->delete();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pemasukan'));
+            return redirect(url('form/pemasukan'));
         }
     	return redirect(url('form/pemasukan'));
     }
@@ -169,8 +177,15 @@ class LaporanKeuanganController extends Controller
     	$tipe = "2";
     	$l->tipe = $tipe;
     	$l->save();
+
+        $uang = $r->jumlah;
+        $q = $r->saldo;
+
+        $saldo = Saldo::find(1);
+        $saldo->saldo = $q - $uang;
+        $saldo->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pengeluaran'));
+            return redirect(url('form/pengeluaran'));
         }
     	return redirect(url('form/pengeluaran'));
     }
@@ -178,7 +193,7 @@ class LaporanKeuanganController extends Controller
     public function editpengeluaran($id)
     {	
     	$l = LaporanKeuangan::find($id);
-    	return view('form/pengeluaran/edit')->with('l', $l);
+    	return view('pengeluaran/edit')->with('l', $l);
     }
 
     public function updatepengeluaran(Request $r)
@@ -192,7 +207,7 @@ class LaporanKeuanganController extends Controller
     	$l->tipe = $tipe;
     	$l->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pengeluaran'));
+            return redirect(url('form/pengeluaran'));
         }
     	return redirect(url('form/pengeluaran'));
     }
@@ -202,7 +217,7 @@ class LaporanKeuanganController extends Controller
     	$l =  LaporanKeuangan::find($id);
     	$l->delete();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/pengeluaran'));
+            return redirect(url('form/pengeluaran'));
         }
     	return redirect(url('form/pengeluaran'));
     }

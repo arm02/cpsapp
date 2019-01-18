@@ -49,7 +49,7 @@ th, td {
             <tr>
            <td>{{$q->id}}</td>
            <td>{{$q->nama}}</td>
-           <td>{{$q->jammasuk}}</td>
+           <td>{{$q->created_at}}</td>
            <td><img src="./uploads/{{$q->gambar}}" style="width: 80px;"></td>
               @endforeach
   </tbody>

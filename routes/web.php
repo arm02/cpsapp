@@ -13,16 +13,14 @@
 
 Route::get('/', 'WebcamController@welcome');
 Route::post('/absensi/save', 'WebcamController@save');
-
+Route::get('/saldo/{id}', 'SaldoController@saldo');
 
 Auth::routes();
 
 
-Route::group(['prefix' => 'admin'] , function(){
+Route::group(['prefix' => ''] , function(){
 	Route::group(['middleware' => 'admin'], function(){
-		Route::get('/', 'AdminController@indexadmin');
-		Route::get('/operator', 'AdminController@indexoperator');
-		Route::get('/super', 'AdminController@indexsuper');
+		Route::get('/admin', 'AdminController@indexadmin');
 		Route::get('/dataadmin', 'AdminController@dataadmin');
 		Route::get('/dataadmin/add', 'AdminController@addadmin');
 		Route::post('/dataadmin/save', 'AdminController@saveadmin');
@@ -95,11 +93,14 @@ Route::group(['prefix' => 'admin'] , function(){
 		Route::get('form/karyawan/pdf','KaryawanController@pdf');
 		Route::get('form/karyawan/downloadExcel/{type}','KaryawanController@downloadExcel');
 		// END ROUTE KARYAWAN PDF
+		Route::get('form/visimisi', 'VisiMisiController@index')->name('visimisi');
+		Route::get('form/visimisi/edit/{id}', 'VisiMisiController@edit')->name('editvisimisi');
+		Route::post('form/visimisi/update', 'VisiMisiController@update')->name('updatevisimisi');
 	});
 });
 
 Route::group(['prefix' => ''] , function() {
-	Route::group(['middleware' => 'super'] , function() {
+	Route::group(['middleware' => ['super' && 'admin']] , function() {
 		Route::get('super', 'AdminController@indexsuper');
 		Route::get('form/pemasukan', 'LaporanKeuanganController@indexpemasukan')->name('addpemasukan');
 		Route::get('form/pemasukan/add', 'LaporanKeuanganController@addpemasukan')->name('addpemasukan');
@@ -124,7 +125,7 @@ Route::group(['prefix' => ''] , function() {
 });
 
 Route::group(['prefix' => ''] , function() {
-	Route::group(['middleware' => 'operator'] , function() {
+	Route::group(['middleware' => ['operator' && 'admin']] , function() {
 		Route::get('operator', 'AdminController@indexoperator');
 		Route::get('form/uploadfile', 'UploadFileController@index')->name('adduploadfile');
 		Route::get('form/uploadfile/add', 'UploadFileController@add')->name('adduploadfile');
@@ -134,7 +135,7 @@ Route::group(['prefix' => ''] , function() {
 		Route::get('form/uploadfile/delete/{id}', 'UploadFileController@delete')->name('deleteuploadfile');
 		Route::get('form/uploadfile/download/{file}', 'UploadFileController@download')->name('downloaduploadfile');
 
-		Route::get('cekabsensi', 'CekAbsensiController@index')->name('index');
-		Route::get('cekabsensi/delete/{id}', 'CekAbsensiController@delete')->name('delete');
+		Route::get('cekabsensi', 'CekAbsensiController@index');
+		Route::get('cekabsensi/delete/{id}', 'CekAbsensiController@delete');
 	});
 });

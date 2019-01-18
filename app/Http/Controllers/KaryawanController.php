@@ -77,7 +77,7 @@ class KaryawanController extends Controller
     	$k->rincian = $r->input('rincian');
     	$k->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/karyawan'));
+            return redirect(url('form/karyawan'));
         }
     	return redirect(url('form/karyawan'));	
     }
@@ -102,7 +102,7 @@ class KaryawanController extends Controller
     	$k->rincian = $r->input('rincian');
     	$k->save();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/karyawan'));
+            return redirect(url('form/karyawan'));
         }
     	return redirect(url('form/karyawan'));
     }
@@ -112,7 +112,7 @@ class KaryawanController extends Controller
     	$k =  Karyawan::find($id);
     	$k->delete();
         if (Auth::user()->role == 1) {
-            return redirect(url('admin/form/karyawan'));
+            return redirect(url('form/karyawan'));
         }
     	return redirect(url('form/karyawan'));
     }

@@ -1,6 +1,69 @@
-@extends('layouts.app')
+@extends('layouts.login')
 
 @section('content')
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kodinger">
+    <title>Login</title>
+    
+</head>
+<body class="my-login-page">
+<form method="POST" action="{{ route('login') }}">
+@csrf
+    <section class="h-100">
+        <div class="container h-100">
+            <div class="row justify-content-md-center h-100">
+                <div class="card-wrapper">
+                    
+                    <div class="card fat" style="border-radius: 60px; margin-top: 10px; background-color: #ffffff">   
+                     <div class="brand" style="width: 200px; height: 200px;">
+                        <img src="{{url('my-login/img/capstone.jpeg')}}" class="img-responsive" alt="Cinque Terre">
+                    </div>               
+                        <div class="card-body">
+                            <h4 class="card-title" style="text-align: center;"></h4>
+                            <form method="POST">
+                             
+                                <div class="form-group">
+                                    <label for="email">E-Mail Address</label>
+
+                                    <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password
+                                        
+                                    </label>
+                                    <input id="password" type="password" class="form-control" name="password" required data-eye>
+                                </div>
+
+                               
+
+                                <div class="form-group no-margin">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Login
+                                    </button>
+                                </div>  
+                                <div class="margin-top20 text-center">
+                                    Copyright ©2019 Casptone Indonesia
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+</body>
+</html>
+
+
+
+
+
+<!-- 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -69,5 +132,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection
