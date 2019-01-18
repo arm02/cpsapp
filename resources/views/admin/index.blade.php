@@ -21,8 +21,12 @@ Admin Dasboard
                         <h2><i class="far fa-money-bill-alt"></i> Saldo Anda : {{$saldo->saldo}}</h2>
                         <form method="POST" action="{{url('tambah_saldo')}}">
                             @csrf
+                            <div>
                             <input type="hidden" name="tambah_saldo" value="{{$saldo->saldo}}">
+                            <label>Tambah Saldo</label>
+                            <input type="text" name="jumlah" placeholder="Masukkan Jumlah Saldo">
                             <button class="btn btn-outline-primary btn-lg" title="Tambah Saldo"><i class="fas fa-hand-holding-usd"></i></button>
+                            </div>
                         </form>
                     </center>
                 </div>

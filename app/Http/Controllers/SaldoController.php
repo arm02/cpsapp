@@ -19,9 +19,10 @@ class SaldoController extends Controller
 
     public function tambah_saldo(Request $r)
     {
-    	$jumlah = $r->tambah_saldo;
+    	$tambah_saldo = $r->tambah_saldo;
+        $jumlah = $r->jumlah;
     	$saldo = Saldo::find(1);
-    	$saldo->saldo = $jumlah + 10000;
+    	$saldo->saldo = $jumlah + $tambah_saldo;
     	$saldo->save();
 
     	return redirect(url('admin'));
