@@ -9,8 +9,8 @@ $(function() {
 			paddingRight: 60
 		});
 		$this.after($("<div/>", {
-			html: 'show',
-			class: 'btn btn-primary btn-sm',
+			html: '<i class="fas fa-eye"></i>',
+			class: 'btn',
 			id: 'passeye-toggle-'+i,
 			style: 'position:absolute;right:10px;top:50%;transform:translate(0,-50%);padding: 2px 7px;font-size:12px;cursor:pointer;'
 		}));
@@ -25,13 +25,18 @@ $(function() {
 			if($this.hasClass("show")) {
 				$this.attr('type', 'password');
 				$this.removeClass("show");
-				$(this).removeClass("btn-outline-primary");
+				$(this).removeClass("btn-outline-danger");
 			}else{
 				$this.attr('type', 'text');
 				$this.val($("#passeye-"+i).val());				
 				$this.addClass("show");
-				$(this).addClass("btn-outline-primary");
+				$(this).addClass("btn-outline-danger");
 			}
 		});
 	});
 });
+
+
+
+
+

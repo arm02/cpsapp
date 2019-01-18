@@ -22,6 +22,7 @@
     <script src="{{url('my-login/js/jquery.min.js')}}"></script>
     <script src="{{url('my-login/bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{url('my-login/js/my-login.js')}}"></script>
+    <link href="{{ asset('fontawesome-free-5.5.0-web/css/all.css') }}" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
