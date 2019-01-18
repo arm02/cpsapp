@@ -14,6 +14,7 @@
 Route::get('/', 'WebcamController@welcome');
 Route::post('/absensi/save', 'WebcamController@save');
 Route::get('/saldo/{id}', 'SaldoController@saldo');
+Route::post('/tambah_saldo/', 'SaldoController@tambah_saldo');
 
 Auth::routes();
 
