@@ -24,7 +24,7 @@ Admin Dasboard
                             <div>
                             <input type="hidden" name="tambah_saldo" value="{{$saldo->saldo}}">
                             <label>Tambah Saldo</label>
-                            <input type="text" name="jumlah" placeholder="Masukkan Jumlah Saldo">
+                            <input type="text" name="jumlah" placeholder="Masukkan Jumlah Saldo" required>
                             <button class="btn btn-outline-primary btn-lg" title="Tambah Saldo"><i class="fas fa-hand-holding-usd"></i></button>
                             </div>
                         </form>
