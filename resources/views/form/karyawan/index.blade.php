@@ -62,8 +62,8 @@ Karyawan
 
 <div class="row">
             <a href="{{url('form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
-            <a href="{{ url('form/karyawan/pdf')}}"><button class="btn btn-outline-primary">Download PDF</button></a>              
-            <a href="{{ url('form/karyawan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+            <a href="{{ url('form/karyawan/pdf')}}"><button class="btn btn-outline-primary" style="margin-left: 5px">Download PDF</button></a>              
+            <a href="{{ url('form/karyawan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary" style="margin-left: 5px">Download Excel</button></a>
 
             <form action="{{ URL('form/karyawan/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
               @csrf
