@@ -32,10 +32,11 @@ Pemasukan
               <td>{!!$q->rincian!!}</td>
               <td>
                 <a href="{{url('form/pengeluaran/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm">
-                  <i class="fas fa-edit"></i>
+                  <i class="fa fa-edit"></i>
                 </a>
-                 <a href="{{url('form/pengeluaran/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')"> </a>
+                 <a href="{{url('form/pengeluaran/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> </a>
                 <a href="{{url('form/pengeluaran/pdfid1/'.$q->id)}}" class="btn btn-sm btn-outline-success">PDF</a>
+                <a href="{{url('form/pengeluaran/downloadExcelid1/'.$q->id)}}" class="btn btn-sm btn-outline-success">EXCEL</a>
               </td>
             </tr>
             @endforeach

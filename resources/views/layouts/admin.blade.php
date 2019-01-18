@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('fontawesome-free-5.5.0-web/css/all.css') }}" rel="stylesheet">
+     <link href="{{ asset('fontawesome-free-5.5.0-web/css/all.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -55,7 +56,7 @@
                                 <a class="nav-link" href="{{ url('form/karyawan') }}">Karyawan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/form/visimisi') }}">Visi Misi</a>
+                                <a class="nav-link" href="{{ url('form/visimisi') }}">Visi Misi</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
