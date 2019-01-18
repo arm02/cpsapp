@@ -7,7 +7,8 @@
     <meta charset="utf-8">
     <meta name="author" content="Kodinger">
     <title>Login</title>
-    
+
+   
 </head>
 <body class="my-login-page">
 <form method="POST" action="{{ route('login') }}">
@@ -37,9 +38,7 @@
                                     </label>
                                     <input id="password" type="password" class="form-control" name="password" required data-eye>
                                 </div>
-
-                               
-
+                                
                                 <div class="form-group no-margin">
                                     <button type="submit" class="btn btn-primary btn-block">
                                         Login
