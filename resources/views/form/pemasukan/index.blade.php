@@ -37,6 +37,8 @@ Pemasukan
                  <a href="{{url('admin/form/pemasukan/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                  class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i>
                  </a>
+                 <a href="{{url('admin/form/pemasukan/pdfid/'.$q->id)}}" class="btn btn-outline-success btn-sm">PDF</a>
+                 <a href="{{url('admin/form/pemasukan/downloadExcelid/'.$q->id)}}" class="btn btn-outline-success btn-sm">EXCEL</a>
                  @elseif(Auth::user()->role == 3)
                  <a href="{{url('/form/pemasukan/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-edit"></i>       
                 </a>
@@ -61,7 +63,7 @@ Pemasukan
             <a href="{{ url('admin/form/pemasukan/pdf')}}">
               <button class="btn btn-outline-primary">Download PDF</button></a>
               
-            <a href="{{ url('/form/pemasukan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+            <a href="{{ url('admin/form/pemasukan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
           </div>
             @elseif(Auth::user()->role == 3)
             <div style="float:right; ">

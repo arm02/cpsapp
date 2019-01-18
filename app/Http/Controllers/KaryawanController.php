@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Karyawan;
+use Illuminate\Support\Facades\Response;
+use DB;
+use Excel;
+use App\Test;
+use Illuminate\Support\Facades\View;    
+use PDF;
+use Expection;
 
 class KaryawanController extends Controller
 {	
@@ -22,7 +29,40 @@ class KaryawanController extends Controller
     {
     	return view('form.karyawan.add');
     }
+     public function downloadExcelid($id)
+    {
+        $data = Karyawan::all()->where('id',$id);
+        return Excel::create('LaporanKaryawan', function($excel) use ($data) {
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            });
+        })->download('xlsx');
+    }
+    public function pdf()
+    {
 
+    $pen = Karyawan::all();
+      $pdf = PDF::loadView('form.karyawan.pdf');
+      return $pdf->download('LaporanKaryawan.pdf');
+    }
+    public function pdfid($id)
+    {
+        $q = Karyawan::find($id);
+        $pdf = PDF::loadView('form.karyawan.pdfid',compact('q'));
+        return $pdf->download('LaporanKaryawanPerID.pdf');
+    }
+    public function downloadExcel($type)
+    {
+        $data = Karyawan::all();
+            
+        return Excel::create('LaporanKaryawan', function($excel) use ($data) {
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            });
+        })->download($type);
+    }
     public function save(Request $r)
     {
     	$k = new Karyawan;

@@ -51,6 +51,39 @@ class LaporanKeuanganController extends Controller
             });
         })->download($type);
     }
+    public function pdfid($id)
+    {
+        $pdfid = LaporanKeuangan::find($id);
+        $pdf = PDF::loadView('form.pemasukan.pdfid',compact('pdfid'));
+        return $pdf->download('LaporanPemasukanPerID.pdf');
+    }
+    public function pdfid1($id)
+    {
+        $pdfid = LaporanKeuangan::find($id);
+        $pdf = PDF::loadView('form.pengeluaran.pdfid',compact('pdfid'));
+        return $pdf->download('LaporanPemasukanPerID.pdf');
+    }
+    public function downloadExcelid1($id)
+    {
+        $data = LaporanKeuangan::all()->where('id',$id);
+        return Excel::create('LaporanPengeluaran', function($excel) use ($data) {
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            });
+        })->download('xlsx');
+    }
+    public function downloadExcelid($id)
+    {
+        $data = LaporanKeuangan::all()->where('id',$id);
+        return Excel::create('LaporanPemasukan', function($excel) use ($data) {
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            });
+        })->download('xlsx');
+    }
+
      public function downloadExcel1($type)
     {
         $data = LaporanKeuangan::all()->where('tipe',2);

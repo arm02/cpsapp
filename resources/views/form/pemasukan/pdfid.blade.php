@@ -43,18 +43,13 @@ th, td {
     </tr>
   </thead>
   <tbody>
-    <?php
-              $i= 1;
-              $l = \App\LaporanKeuangan::all()->where('tipe',2  );
-              ?>
-              @foreach($l as $q)
+   
             <tr>
-              <th>{{$q->id}}</th>
-              <td>{{$q->judul}}</td>
-              <td>{{$q->jumlah}}</td>
-              <td>{{$q->tanggal}}</td>
-              <td>{!!$q->rincian!!}</td>
-              @endforeach
+              <th>{{$pdfid->id}}</th>
+              <td>{{$pdfid->judul}}</td>
+              <td>{{$pdfid->jumlah}}</td>
+              <td>{{$pdfid->tanggal}}</td>
+              <td>{!!$pdfid->rincian!!}</td>
   </tbody>
 </table>
 
