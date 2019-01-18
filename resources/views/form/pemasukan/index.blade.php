@@ -54,9 +54,9 @@ Pemasukan
 
           
             <a href="{{ url('/form/pemasukan/pdf')}}">
-              <button class="btn btn-outline-primary">Download PDF</button></a>
+              <button class="btn btn-outline-primary" style="margin-left: 5px">Download PDF</button></a>
               
-            <a href="{{ url('/form/pemasukan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+            <a href="{{ url('/form/pemasukan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary" style="margin-left: 5px">Download Excel</button></a>
 
 
             <form  action="{{ URL('form/pemasukan/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">

@@ -50,9 +50,9 @@ Pemasukan
 
 
          
-            <a href="{{ url('/form/pengeluaran/pdf1')}}"><button class="btn btn-outline-primary">Download PDF</button></a>
+            <a href="{{ url('/form/pengeluaran/pdf1')}}"><button class="btn btn-outline-primary" style="margin-left: 5px">Download PDF</button></a>
               
-            <a href="{{ url('/form/pengeluaran/downloadExcel1/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+            <a href="{{ url('/form/pengeluaran/downloadExcel1/xlsx') }}"><button class="btn btn-outline-primary" style="margin-left: 5px">Download Excel</button></a>
             <form action="{{ URL('form/pengeluaran/importExcel1') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
               @csrf
               <input type="file" name="LaporanPengeluaran" style="margin-left: 380px"/>
