@@ -9,7 +9,7 @@ Add SuperVisor
       <div class="card">
         <div class="card-header">Tambah SuperVisor</div>
         <div class="card-body">
-         <form action="{{url('admin/dataoperator/save')}}" method="POST">
+         <form action="{{url('datasuper/save')}}" method="POST">
           <div class="form-group">
             <label for="formGroupExampleInput">Username</label>
             <input type="text" class="form-control" name="name" id="formGroupExampleInput" 
@@ -39,7 +39,7 @@ Add SuperVisor
             </select>
           </div>
           @csrf
-          <button class="btn btn-outline-success float-right" type="submit">Tambah Data</button>
+         <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-plus-circle"></i></button>
         </form>
       </div>
     </div>

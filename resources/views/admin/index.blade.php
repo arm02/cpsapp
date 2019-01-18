@@ -11,7 +11,7 @@ Admin Dasboard
 
                 <div class="card-body">
                     <center>
-                        <h2>Welcome , {{Auth::user()->name}}</h2>
+                        <h2>Welcome Admin, {{Auth::user()->name}}</h2>
                         <hr>
                         <h6>Silahkan pilih menu di navbar</h6>
                         <hr>

@@ -1,4 +1,4 @@
-@extends('layouts.super')
+@extends('layouts.admin')
 @section('title')
 Admin Dasboard
 @endsection
@@ -7,11 +7,11 @@ Admin Dasboard
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">SuperVisor Dashboard</div>
+                <div class="card-header">Supervisor Dashboard</div>
 
                 <div class="card-body">
                     <center>
-                        <h2>Welcome , {{Auth::user()->name}}</h2>
+                        <h2>Welcome Supervisor, {{Auth::user()->name}}</h2>
                         <hr>
                         <h6>Silahkan pilih menu di navbar</h6>
                         <hr>

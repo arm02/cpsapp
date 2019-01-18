@@ -51,7 +51,7 @@ class AdminController extends Controller
     	$n->role = $r->input('role');
     	$n->status = $r->input('status');
     	$n->save();
-    	return redirect(url('admin/dataadmin'));
+    	return redirect(url('dataadmin'));
     }
 
     public function editadmin($id)
@@ -66,7 +66,7 @@ class AdminController extends Controller
     	$status = "1";
     	$user->status = $status;
     	$user->save();
-    	return redirect(url('admin/dataadmin'));
+    	return redirect(url('dataadmin'));
     }
 
     public function updateadmin2(Request $r)
@@ -75,14 +75,14 @@ class AdminController extends Controller
         $status = "2";
         $user->status = $status;
         $user->save();
-        return redirect(url('admin/dataadmin'));
+        return redirect(url('dataadmin'));
     }
 
     public function deleteadmin($id)
     {
     	$user = User::find($id);
     	$user->delete();
-    	return redirect(url('admin/dataadmin'));
+    	return redirect(url('dataadmin'));
     }
 
     public function dataoperator()
@@ -104,7 +104,7 @@ class AdminController extends Controller
     	$n->role = $r->input('role');
     	$n->status = $r->input('status');
     	$n->save();
-    	return redirect(url('admin/dataoperator'));
+    	return redirect(url('dataoperator'));
     }
 
     public function editoperator($id)
@@ -119,7 +119,7 @@ class AdminController extends Controller
     	$status = "1";
     	$user->status = $status;
     	$user->save();
-    	return redirect(url('admin/dataoperator'));
+    	return redirect(url('dataoperator'));
     }
 
     public function updateoperator2(Request $r)
@@ -128,14 +128,14 @@ class AdminController extends Controller
         $status = "2";
         $user->status = $status;
         $user->save();
-        return redirect(url('admin/dataoperator'));
+        return redirect(url('dataoperator'));
     }
 
     public function deleteoperator($id)
     {
     	$user = User::find($id);
     	$user->delete();
-    	return redirect(url('admin/dataoperator'));
+    	return redirect(url('dataoperator'));
     }
 
     public function datasuper()
@@ -157,7 +157,7 @@ class AdminController extends Controller
     	$n->role = $r->input('role');
     	$n->status = $r->input('status');
     	$n->save();
-    	return redirect(url('admin/datasuper'));
+    	return redirect(url('datasuper'));
     }
 
     public function editsuper($id)
@@ -172,7 +172,7 @@ class AdminController extends Controller
     	$status = "1";
     	$user->status = $status;
     	$user->save();
-    	return redirect(url('admin/datasuper'));
+    	return redirect(url('datasuper'));
     }
 
     public function updatesuper2(Request $r)
@@ -181,13 +181,13 @@ class AdminController extends Controller
         $status = "2";
         $user->status = $status;
         $user->save();
-        return redirect(url('admin/datasuper'));
+        return redirect(url('datasuper'));
     }
 
     public function deletesuper($id)
     {
     	$user = User::find($id);
     	$user->delete();
-    	return redirect(url('admin/datasuper'));
+    	return redirect(url('datasuper'));
     }
 }

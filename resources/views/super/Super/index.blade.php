@@ -39,11 +39,11 @@ Admin
                   @endif</td>
                   <td>
                   @if($q->status != 1)
-                   <a href="{{url('admin/datasuper/updatesuper/'.$q->id)}}" class="btn btn-outline-warning btn-sm">Aktifkan</a>
+                   <a href="{{url('datasuper/updatesuper/'.$q->id)}}" class="btn btn-outline-warning btn-sm">Aktifkan</a>
                    @elseif($q->status !=2)
-                   <a href="{{url('admin/datasuper/updatesuper2/'.$q->id)}}" class="btn btn-outline-warning btn-sm">NonAktifkan</a>
+                   <a href="{{url('datasuper/updatesuper2/'.$q->id)}}" class="btn btn-outline-warning btn-sm">NonAktifkan</a>
                    @endif
-                   <a href="{{url('admin/datasuper/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
+                   <a href="{{url('datasuper/delete/'.$q->id)}}" onclick="return confirm('anda yakin untuk menghapusnya ?')" 
                      class="btn btn-outline-danger btn-sm">Delete</a>
                    </tr>
                    @endforeach
@@ -52,7 +52,7 @@ Admin
              </div>
              <hr>
             <li class="list-group-item float-left">
-              <a href="{{url('admin/datasuper/add')}}" class="btn btn-outline-primary btn-sm">Tambah Data</a>
+              <a href="{{url('datasuper/add')}}" class="btn btn-primary fas fa-plus-circle"></a>
             </li>
           </div>
         </div>
