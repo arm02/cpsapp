@@ -27,7 +27,7 @@ Visi & Misi
               <td>{!!$q->visi!!}</td>
               <td>{!!$q->misi!!}</td>
               <td>
-                <a href="{{url('admin/form/visimisi/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-edit"></i></a>
+                <a href="{{url('form/visimisi/edit/'.$q->id)}}" class="btn btn-outline-warning btn-sm"><i class="fas fa-edit"></i></a>
               </td>
             </tr>
             @endforeach               

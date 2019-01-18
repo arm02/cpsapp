@@ -29,6 +29,6 @@ class VisiMisiController extends Controller
     	$v->visi = $r->visi;
     	$v->misi = $r->misi;
     	$v->save();
-    	return redirect(url('admin/form/visimisi'));	
+    	return redirect(url('form/visimisi'));	
     }
 }

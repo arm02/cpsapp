@@ -4,7 +4,7 @@ Ubah Visi & Misi
 @endsection
 @section('content')
 <div class="container">
-  <form action="{{url('admin/form/visimisi/update')}}" method="POST" enctype="multipart/form-data">
+  <form action="{{url('form/visimisi/update')}}" method="POST" enctype="multipart/form-data">
     <div class="row justify-content-center">
         <div class="col-md-6">
           <label for="judul"><u>Visi</u></label>
