@@ -55,6 +55,15 @@ Karyawan
         </table>
         </div>
         <hr>
+<<<<<<< HEAD
+          <a href="{{url('form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
+           <div style="float:right; ">
+            <a href="{{ url('form/karyawan/pdf')}}">
+              <button class="btn btn-outline-primary">Download PDF</button></a>
+              
+            <a href="{{ url('form/karyawan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary">Download Excel</button></a>
+            <form style="border: 2px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ URL('form/karyawan/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+=======
         <div class="">
           <label>   </label>
         </div>
@@ -66,6 +75,7 @@ Karyawan
             <a href="{{ url('form/karyawan/downloadExcel/xlsx') }}"><button class="btn btn-outline-primary" style="margin-left: 5px">Download Excel</button></a>
 
             <form action="{{ URL('form/karyawan/importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+>>>>>>> 920263c42d66f9bd6e93d5e876de8df76f4e3dec
               @csrf
 
            
@@ -80,6 +90,18 @@ Karyawan
 
               </div>
           </div>
+<<<<<<< HEAD
+          <br>
+          <div style="float: left;">
+            <form style="border: 2px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('form/pemasukan/deleteallPM') }}" class="form-horizontal" method="get">
+              @csrf
+              <label>Silahkan masukan nama karyawan yang ingin dihapus</label>
+              <input type="text" name="nama">
+              <button type="submit" class="btn btn-outline-danger fas fa-trash-alt"></button>
+            </form>
+          </div>
+=======
+>>>>>>> 920263c42d66f9bd6e93d5e876de8df76f4e3dec
       </div>
     </div>
 @endsection
