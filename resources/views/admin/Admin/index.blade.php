@@ -52,7 +52,7 @@ Admin
              </div>
              <hr>
             <li class="list-group-item float-left">
-              <a href="{{url('dataadmin/add')}}" class="btn btn-primary fas fa-plus-circle">Tambah Data</a>
+              <a href="{{url('dataadmin/add')}}" class="btn btn-primary fas fa-plus-circle"></a>
             </li>
           </div>
         </div>

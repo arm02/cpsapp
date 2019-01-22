@@ -55,6 +55,7 @@ Karyawan
         </table>
         </div>
         <hr>
+          <a href="{{url('form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
            <div style="float:right; ">
             <a href="{{ url('form/karyawan/pdf')}}">
               <button class="btn btn-outline-primary">Download PDF</button></a>
@@ -66,7 +67,15 @@ Karyawan
               <button class="btn btn-outline-success">Import Excel</button>
             </form>
           </div>
-          <a href="{{url('form/karyawan/add')}}" class="btn btn-outline-primary btn-lg"><i class="fas fa-plus-square"></i></a>
+          <br>
+          <div style="float: left;">
+            <form style="border: 2px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('form/pemasukan/deleteallPM') }}" class="form-horizontal" method="get">
+              @csrf
+              <label>Silahkan masukan nama karyawan yang ingin dihapus</label>
+              <input type="text" name="nama">
+              <button type="submit" class="btn btn-outline-danger fas fa-trash-alt"></button>
+            </form>
+          </div>
       </div>
     </div>
 @endsection

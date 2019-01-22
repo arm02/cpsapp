@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use PDF;
 use Expection;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Todo;
 
 
 class LaporanKeuanganController extends Controller
@@ -194,10 +195,15 @@ class LaporanKeuanganController extends Controller
     {
     	$l =  LaporanKeuangan::find($id);
     	$l->delete();
-        if (Auth::user()->role == 1) {
-            return redirect(url('form/pemasukan'));
-        }
     	return redirect(url('form/pemasukan'));
+    }
+
+    public function deleteallPM(Request $request)
+    {
+        $l = $request->get('tanggal');
+        $u = DB::table('laporan_keuangans')->where('tanggal', 'like', '%'.$l.'%');
+        $u->delete();
+        return redirect(url('form/pemasukan'));
     }
 
     public function indexpengeluaran()
@@ -227,9 +233,6 @@ class LaporanKeuanganController extends Controller
         $saldo = Saldo::find(1);
         $saldo->saldo = $q - $uang;
         $saldo->save();
-        if (Auth::user()->role == 1) {
-            return redirect(url('form/pengeluaran'));
-        }
     	return redirect(url('form/pengeluaran'));
     }
 
@@ -249,9 +252,6 @@ class LaporanKeuanganController extends Controller
     	$tipe = "2";
     	$l->tipe = $tipe;
     	$l->save();
-        if (Auth::user()->role == 1) {
-            return redirect(url('form/pengeluaran'));
-        }
     	return redirect(url('form/pengeluaran'));
     }
 
@@ -259,10 +259,15 @@ class LaporanKeuanganController extends Controller
     {
     	$l =  LaporanKeuangan::find($id);
     	$l->delete();
-        if (Auth::user()->role == 1) {
-            return redirect(url('form/pengeluaran'));
-        }
     	return redirect(url('form/pengeluaran'));
+    }
+
+    public function deleteallPG(Request $request)
+    {
+        $l = $request->get('tanggal');
+        $u = DB::table('laporan_keuangans')->where('tanggal', 'like', '%'.$l.'%');
+        $u->delete();
+        return redirect(url('form/pengeluaran'));
     }
 }	
 

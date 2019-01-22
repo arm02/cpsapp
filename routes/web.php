@@ -55,6 +55,7 @@ Route::group(['prefix' => ''] , function(){
 		Route::get('form/pemasukan/pdfid/{id}','LaporanKeuanganController@pdfid');
 		Route::get('form/pemasukan/downloadExcelid/{id}','LaporanKeuanganController@downloadExcelid');
 		Route::post('form/pemasukan/importExcel', 'LaporanKeuanganController@importExcel');
+		Route::get('form/pemasukan/deleteallPM', 'LaporanKeuanganController@deleteallPM');
 		// END PDF ROUTE PEMASUKKAN
 		Route::get('form/pengeluaran', 'LaporanKeuanganController@indexpengeluaran')->name('addpengeluaran');
 		Route::get('form/pengeluaran/add', 'LaporanKeuanganController@addpengeluaran')->name('addpengeluaran');
@@ -62,6 +63,7 @@ Route::group(['prefix' => ''] , function(){
 		Route::get('form/pengeluaran/edit/{id}', 'LaporanKeuanganController@editpengeluaran')->name('editpengeluaran');
 		Route::post('form/pengeluaran/update', 'LaporanKeuanganController@updatepengeluaran')->name('updatepengeluaran');
 		Route::get('form/pengeluaran/delete/{id}', 'LaporanKeuanganController@deletepengeluaran')->name('deletepengeluaran');
+		Route::get('form/pengeluaran/deleteallPG', 'LaporanKeuanganController@deleteallPG');
 		// START ROUTE PDF PENGELUARAN
 		Route::get('form/pengeluaran/downloadExcel1/{type}','LaporanKeuanganController@downloadExcel1');
 		Route::get('form/pengeluaran/pdf1','LaporanKeuanganController@pdf1');

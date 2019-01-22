@@ -59,6 +59,15 @@ Pemasukan
               <button class="btn btn-outline-success">Import Excel</button>
             </form>
           </div>
+          <br>
+          <div style="float: left;">
+            <form style="border: 2px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('form/pengeluaran/deleteallPG') }}" class="form-horizontal" method="get">
+              @csrf
+              <label>Silahkan masukan tanggal laporan yang ingin dihapus</label>
+              <input type="date" name="tanggal">
+              <button type="submit" class="btn btn-outline-danger fas fa-trash-alt"></button>
+            </form>
+          </div>
       </div>
     </div>
 @endsection
